@@ -1,0 +1,25 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/botframework-sdk/master/schemas/component/component.schema",
+    "$role": "implements(Microsoft.IDialog)",
+    "title": "Correo",
+    "description": "Mandar correo",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "arg1": {
+            "$ref": "#/definitions/integerExpression",
+            "title": "Arg1",
+            "description": "Value from callers memory to use as arg 1"
+        },
+        "arg2": {
+            "$ref": "#/definitions/integerExpression",
+            "title": "Arg2",
+            "description": "Value from callers memory to use as arg 2"
+        },
+        "resultProperty": {
+            "$ref": "#/definitions/stringExpression",
+            "title": "Result",
+            "description": "Value from callers memory to store the result"
+        }
+    }
+}

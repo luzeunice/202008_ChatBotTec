@@ -1,0 +1,16 @@
+[import](common.lg)
+
+
+
+
+# TextInput_Prompt_4lIja5()
+- Escribe tu "nomina o correo" para mostrarte informacion personalizada
+# SendActivity_w8aX6t()
+- Buscando: ${dialog.nomi_mail}
+
+
+# SendActivity_Z3PloB()
+- Hola ${user.nombre}
+
+# SendActivity_PgwdXb()
+- Lo siento, no encontré coincidencias.
