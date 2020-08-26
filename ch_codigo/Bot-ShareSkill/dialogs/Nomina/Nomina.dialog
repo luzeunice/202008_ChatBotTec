@@ -1,0 +1,84 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Tjwp7e",
+    "name": "Nomina"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "JplkxD"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "4lIja5"
+          },
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_4lIja5()}",
+          "property": "dialog.nomi_mail",
+          "value": "=coalesce(@correo, @nomina)"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "w8aX6t"
+          },
+          "activity": "${SendActivity_w8aX6t()}"
+        },
+        {
+          "$kind": "AzureTable_Query",
+          "$designer": {
+            "id": "YWOwdi"
+          },
+          "Columnas": "nombre",
+          "Table_Name": "la0usuario",
+          "Filtro": "(nomina eq '${dialog.nomi_mail}') or (correo eq '${toLower(dialog.nomi_mail)}') or (correo eq '${toUpper(dialog.nomi_mail)}')",
+          "resultProperty": "user.nombre"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "x8Wgna"
+          },
+          "condition": " user.nombre != \"\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Z3PloB"
+              },
+              "activity": "${SendActivity_Z3PloB()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "PgwdXb"
+              },
+              "activity": "${SendActivity_PgwdXb()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "WppPEY"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu_Principal"
+        }
+      ]
+    }
+  ],
+  "generator": "Nomina.lg",
+  "recognizer": "Nomina.lu"
+}

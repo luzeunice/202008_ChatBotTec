@@ -1,0 +1,22 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "0Gc5hM",
+    "name": "Menu_Dialogo_4",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3DweL9"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "Menu_Dialogo_4.lg"
+}
