@@ -1,0 +1,87 @@
+
+# AddSession
+- Necesito añadir una sesión 
+- Quiero añadir una sesión
+- Me gustaría dar una sesión de skills de {sessionTitle=Fundamentos de Azure}
+- Quiero dar una plática de {sessionTitle=Fundamentos de Azure}
+- Quiero agendar una sesión de {sessionTitle=Estadísticas con excel}
+- Puedes poner una sesión de shared skills de {sessionTitle=principios de ciencia de datos}
+- Agendar sesión de {sessionTitle=Manejo de datos personales}
+- Pon una sesion para {sessionTitle=Cómo tener una comunicación efectiva}
+- Quiero dar una platica de {sessionTitle=Uso de SQL}
+- Quiero dar una sesion de {sessionTitle=historia de la musica}
+- [Por favor] añade una sesión de {sessionTitle=Comunicacion Efectiva}
+- [Sabes si puedo] dar una sesion de {sessionTitle=Desarrollos agiles}
+- Nueva sesión
+- Nueva plática
+- Nueva sesion
+- Añade una plática
+- Agendar sesión
+- Agregar plática
+> entity definitions
+@ ml sessionTitle
+> phrase list definitions
+@ phraseList addItem(interchangeable) = 
+	- agregar
+	- añadir
+	- poner
+	- añade
+	- pon
+	- agrega
+	- agenda
+	- agendar
+
+
+# ViewSessions
+- Me puedes mostrar la agenda pro favor?
+- Me puestras la agenda, por favor?
+- Sabes cuáles son las siguientes sesiones?
+- Me muestras las sesiones proximas por fa?
+- Muesta sesiones siguientes
+- Muestra las pláticas
+- Sabes cuáles son las pláticas que siguen?
+- Quiero ver las pláticas que se van a dar
+- Quiero ver las sesiones que se van a dar
+- A ver las sesiones
+- Ver pláticas
+- Ver sesiones
+
+# Registration
+> add some example phrases to trigger this intent:
+- Por favor regístrame a la sesión del 12/10/2020 con la nómina {userNomina=L00818965}
+- Por favor regístrame a la sesión del 25/12/2020
+- Me podrías registrar a la plática del 5/08/2020
+- registrar a la del 3/11/2020
+- Registrame en la del 14/10/2020
+- Inscribeme en la del 10/5/2020
+- Ponme en la de 30/7/2020
+- Ponme en la del 28/2/2020
+- Inscribe a {userNomina=L00173927} a 1/2/2020
+- Me puedes poner en la sesión del 02/9/2020 con nómina {userNomina=L01492743}
+- Me puedes meter a la platica del 3/4/2020 por fa
+- Quiero registrarme a una sesión
+- Quiero registrarme en una plática
+- Registrarme en una sesión
+- Quiero entrar en una plática
+- Quiero estar en una sesión
+- Me registras a la sesion
+- Quiero regsitrarme a una sesión
+- Registrame a una sesión
+- Quiero registrarme a una sesión
+- Quiero registrarme en una plática
+- Registrarme en una sesión
+> entity definitions:
+@ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa
+$ fechaDeEvento:/[0-3]{0,1}[0-9]{1}\/[0-2]{0,1}[0-9]{1}\/20[0-9]{2}/ 
+# UserProfile
+- empezar
+- Mi nomina es {userNomina=L00818965}
+- Mi nomina es {userNomina=L01732945}
+- La nomina es {userNomina=L08825013}
+- Para que me guardes la nomina es {userNomina=L00473914}
+- Mi nómina es {userNomina=L00418304}
+- {userNomina=L00912304}
+- Es {userNomina=L00812304}
+- Soy la nómina {userNomina=L00516409} 
+- Soy {userNomina=L00818361}
+@ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa

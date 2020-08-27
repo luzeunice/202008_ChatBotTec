@@ -1,0 +1,7 @@
+{
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "LUIS_addSession",
+    "recognizers": {
+        "en-us": "addSession.en-us.lu"
+    }
+}

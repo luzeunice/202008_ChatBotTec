@@ -1,0 +1,27 @@
+
+# TextInput_Response_T5dz7D
+- Por favor regístrame a la sesión del {fechaDeEvento=12/10/2020} con la nómina {userNomina=L00818965}
+- Por favor regístrame a la sesión del {fechaDeEvento=25/12/2020} 
+- Me podrías registrar a la plática del {fechaDeEvento=5/08/2020}
+- registrar a la del {fechaDeEvento=3/11/2020}
+- Registrame en la del {fechaDeEvento=14/10/2020}
+- Inscribeme en la del {fechaDeEvento=10/5/2020} 
+- Ponme en la de {fechaDeEvento=30/7/2020}
+- Ponme en la del {fechaDeEvento=28/2/2020}
+- Inscribe a {userNomina=L00173927} a {fechaDeEvento=1/2/2020}
+- Me puedes poner en la sesión del {fechaDeEvento=02/9/2020} con nómina {userNomina=L01492743}
+- Me puedes meter a la platica del {fechaDeEvento=3/4/2020} por fa
+> entity definitions:
+@ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa
+@ regex fecha= /^[0-3]{0,1}[0-9]{1}\/[0-2]{0,1}[0-9]{1}\/20[0-9]{2}$/ Roles=fechaDeEventoo
+# TextInput_Response_6bcqse
+- Mi nomina es {userNomina=L00818965}
+- Mi nomina es {userNomina=L01732945}
+- La nomina es {userNomina=L08825013}
+- Para que me guardes la nomina es {userNomina=L00473914}
+- Mi nómina es {userNomina=L00418304}
+- {userNomina=L00912304}
+- Es {userNomina=L00812304}
+- Soy la nómina {userNomina=L00516409} 
+- Soy {userNomina=L00818361}
+@ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa

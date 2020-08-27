@@ -1,0 +1,43 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NfswJA",
+    "name": "userProfile",
+    "description": "Dialogo para guardar la nómina del usuario."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "xXFTss"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "Jn4gvY"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_Jn4gvY()}",
+          "property": "user.nomina",
+          "value": "=coalesce(@userNomina, @nominaUser)"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OVTEgK"
+          },
+          "activity": "${SendActivity_OVTEgK()}"
+        }
+      ]
+    }
+  ],
+  "generator": "userProfile.lg",
+  "recognizer": "userProfile.lu"
+}
