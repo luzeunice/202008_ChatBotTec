@@ -36,6 +36,7 @@ namespace CosmosTableSamples.Model
         public string nomina1 { get; set; }
         public string titulo { get; set; }
         public string estatus { get; set; }
+        public string idSesion { get; set; }
     }
     public class Usuario : TableEntity
     {

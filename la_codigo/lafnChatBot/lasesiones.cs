@@ -1,5 +1,6 @@
 /***************************************************
-* FUNCION PARA OBTENER 3 SESIONES SIGUIENTES
+* FUNCION PARA 
+* GET: OBTENER 3 SESIONES SIGUIENTES
 * 
 * ENTRADA: 
 * Ninguna
@@ -51,6 +52,9 @@ namespace lafnChatBot
 
             string identificador = "";
 
+            string fechaHoy = DateTime.Now.ToString();
+            var detalleFecha = fechaHoy.ToString();
+
             if ((string)req.Method == "POST")
             {
 
@@ -97,11 +101,18 @@ namespace lafnChatBot
                 CloudTableClient tableClient = storageAccount.CreateCloudTableClient(new TableClientConfiguration());
                 CloudTable tableSesiones = tableClient.GetTableReference("la0sesiones");
 
+
+
                 /****************************
                 * OBTENER LA INFORMACIÓN 
                 ****************************/
 
-                List<Sesion> sesiones = tableSesiones.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" && e.fecha_evento>= DateTime.UtcNow ).ToList();
+                
+                List<Sesion> sesiones = tableSesiones.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" && e.fecha_evento >= DateTime.UtcNow).ToList();
+                
+                /*
+                List<Sesion> sesiones = tableSesiones.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" ).ToList();
+                */
                 List<Sesion> sesiones_orden = sesiones.OrderBy(c => c.fecha_evento).ToList();
 
                 var sesionVacia = new List<Sesion>() { new Sesion() { titulo = "Sin Próximas Sesiones Planeadas" } };
@@ -137,9 +148,10 @@ namespace lafnChatBot
             }
             string responseMessage = string.IsNullOrEmpty(identificador)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {(string)req.Method}. This HTTP triggered function executed successfully.";
+                : $"Hello, {detalleFecha}. This HTTP triggered function executed successfully.";
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult("OK");
         }
+        
     }
 }

@@ -1,15 +1,22 @@
 
 /****************************
-* FUNCION PARA CONSULTAR LA INFORMACIÓN DE USUARIO
+* ****** FUNCION PARA: 
+* GET: 
+* CONSULTAR LA INFORMACIÓN DE USUARIO
 * 
-* ENTRADA: 
+* ******ENTRADA: 
+* 
+* GET:
 * Identificador ( Nomina o correo) 
 * 
-* SALIDA: 
-* Resultado: Información del usuario como nombre, nomina, correo, etc. 
+* ******SALIDA: 
+* GET:
+* Resultado: Información del usuario como nombre, nómina, correo, etc. 
 * 
-* VALIDACIÓN: 
+* ******VALIDACIÓN: 
+* GET:
 * Si no encuentra información de usuario colocar en nombre: "Sin Datos"
+* Se cambia a mayúsculas: indetificador
 * 
 * Creado por: Luz Eunice Angeles Ochoa 
 * Fecha: 26 de agosto de 2020
@@ -71,6 +78,7 @@ namespace lafnChatBot
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
                 identificador = identificador ?? data?.identificador;
+                identificador = identificador.ToUpper();
 
                 /* **************************
                  * Conexion Key Vault 
