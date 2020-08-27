@@ -1,0 +1,8 @@
+{
+    "luis": {
+        "addSession_en_us_lu": "4097abc0-2bc3-46b2-a5ce-230002685c5d",
+        "userProfile_en_us_lu": "59ab56cd-a035-4b07-a680-c951359c0f4c",
+        "chatbotsharedskills_en_us_lu": "3ccf00ef-ff1d-4661-86db-500b83d19bab",
+        "registerAssistant_en_us_lu": "4299e809-f4ab-4c31-b7d5-4be1eaaaa6fe"
+    }
+}

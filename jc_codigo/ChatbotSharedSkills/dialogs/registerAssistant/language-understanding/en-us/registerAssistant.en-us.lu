@@ -25,3 +25,4 @@
 - Soy la nómina {userNomina=L00516409} 
 - Soy {userNomina=L00818361}
 @ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa
+> !# @app.culture = es-mx
