@@ -86,3 +86,14 @@ $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}\/[0-2]{0,1}[0-9]{1}\/20[0-9]{2}/
 - Soy {userNomina=L00818361}
 @ regex nominaUser = /^L0[0-9]{7}/ Roles=userNominaa
 > !# @app.culture = es-mx
+
+# updateRecord
+> add some example phrases to trigger this intent:
+- Me puedo quitar de la reunión
+- Ya no quiero ir a la reunión
+- No quiero estar en la reunión por favor 
+- Desinscribeme de la reunión
+- Quitar registro de reunión
+
+> entity definitions:
+> @ ml city
