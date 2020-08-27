@@ -1,7 +1,7 @@
 {
     "$kind": "Microsoft.LuisRecognizer",
-    "id": "LUIS_registerAssistant",
-    "applicationId": "=settings.luis.registerAssistant_en_us_lu",
+    "id": "LUIS_chatbotsharedskills",
+    "applicationId": "=settings.luis.chatbotsharedskills_es_mx_lu",
     "endpoint": "=settings.luis.endpoint",
     "endpointKey": "=settings.luis.endpointKey"
 }
