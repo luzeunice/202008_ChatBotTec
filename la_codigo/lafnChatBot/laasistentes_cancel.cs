@@ -127,7 +127,7 @@ namespace laasistentes_cancel
                  * ***********************************************************/
                 if (usuario == null || usuario.Count() == 0) 
                 {
-                    responseMessageS = JsonConvert.SerializeObject(new { Resultado1 = "No registrado en base de datos de usuario." });
+                    responseMessageS = JsonConvert.SerializeObject(new { Resultado = "UsuarioNoBaseDatos" });
 
                     return new OkObjectResult(responseMessageS);
                 }
@@ -146,7 +146,7 @@ namespace laasistentes_cancel
 
                     if (sesion == null || sesion.Count() == 0)
                     {
-                        responseMessageS = JsonConvert.SerializeObject(new { Resultado1 = "Sesion no valida" });
+                        responseMessageS = JsonConvert.SerializeObject(new { Resultado = "SesionNovalida" });
 
                         return new OkObjectResult(responseMessageS);
 
@@ -158,7 +158,7 @@ namespace laasistentes_cancel
 
                         if (asistente == null || asistente.Count() == 0)
                         {
-                            responseMessageS = JsonConvert.SerializeObject(new { Resultado1 = "No hay confirmación de asistencia con la información proporcionada" });
+                            responseMessageS = JsonConvert.SerializeObject(new { Resultado = "NohayInformacion" });
 
                             return new OkObjectResult(responseMessageS);
 
@@ -166,7 +166,7 @@ namespace laasistentes_cancel
                         else
                         {
 
-                            responseMessageS = JsonConvert.SerializeObject(new { Resultado1 = asistente[0] });
+                            responseMessageS = JsonConvert.SerializeObject(new { Resultado = "Cencelando" });
 
 
 

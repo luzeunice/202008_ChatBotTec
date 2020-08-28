@@ -56,29 +56,29 @@ namespace lafnChatBot
 
             string identificador = "";
 
-            if ((string)req.Method == "POST")
+            if ((string)req.Method == "GET")
             {
-
+                return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = "GET" }));
             }
 
             /****************************
             * GET
             ****************************/
-            if ((string)req.Method == "GET")
+            if ((string)req.Method == "post"|| (string)req.Method == "POST")
             {
 
 
                 log.LogInformation("C# HTTP trigger function processed a request GET.");
-                
+
                 /* **************************
                  * Identificador 
-                 ****************************/ 
+                 ****************************/
 
                 identificador = req.Query["identificador"];
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
                 identificador = identificador ?? data?.identificador;
-                identificador = identificador.ToUpper();
+
 
                 /* **************************
                  * Conexion Key Vault 
@@ -108,27 +108,30 @@ namespace lafnChatBot
                 * **************************/
 
                 CloudTable tableUsuarios = tableClient.GetTableReference("la0usuario");
-                List<Usuario> usuario = tableUsuarios.CreateQuery<Usuario>().AsQueryable<Usuario>().Where(e => e.PartitionKey == "Empleado" && ( e.nomina == identificador || e.correo == identificador)).ToList();
-               
+                List<Usuario> usuario = tableUsuarios.CreateQuery<Usuario>().AsQueryable<Usuario>().Where(e => e.PartitionKey == "Empleado" && (e.nomina == identificador || e.correo == identificador)).ToList();
+
                 var usuarioVacio = new List<Usuario>() { new Usuario() { nombre = "Sin Datos" } };
 
                 /* **************************
                 * Si tiene registros regresar la información , sino colocar en el nombre="Sin Datos"
                  **************************/
 
-                if (usuario.Count >= 1 )
+                if (usuario.Count >= 1)
                 {
-                        return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = usuario[0] }));
+                    return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = usuario[0] }));
                 }
-                else 
+                else
                 {
-                        return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = usuarioVacio[0] })); 
+                    return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = usuarioVacio[0] }));
                 }
 
-                }
-            string responseMessage = "OK";
+            }
+            else
+            {
+                return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = "OK" }));
+            }
 
-            return new OkObjectResult(responseMessage);
+           
         }
     }
 }
