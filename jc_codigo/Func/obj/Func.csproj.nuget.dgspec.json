@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/josejuarez/Documents/Trabajo.nosync/202008_ChatBotTec/jc_codigo/Func/Func.csproj": {}
+  },
+  "projects": {
+    "/Users/josejuarez/Documents/Trabajo.nosync/202008_ChatBotTec/jc_codigo/Func/Func.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/josejuarez/Documents/Trabajo.nosync/202008_ChatBotTec/jc_codigo/Func/Func.csproj",
+        "projectName": "Func",
+        "projectPath": "/Users/josejuarez/Documents/Trabajo.nosync/202008_ChatBotTec/jc_codigo/Func/Func.csproj",
+        "packagesPath": "/Users/josejuarez/.nuget/packages/",
+        "outputPath": "/Users/josejuarez/Documents/Trabajo.nosync/202008_ChatBotTec/jc_codigo/Func/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/josejuarez/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Azure.Security.KeyVault.Secrets": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.Azure.Cosmos.Table": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
+            "Microsoft.NET.Sdk.Functions": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

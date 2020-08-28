@@ -1,0 +1,209 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "JjjjUV",
+    "name": "registerAssistant",
+    "description": "Registra asistentes a reuniones"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "fiTaLJ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "XM6Vsr"
+          },
+          "property": "dialog.fechaDeEvento",
+          "value": "=coalesce(@fechaDeEvento, $fechaDeEvento)"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "IdhZZs"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_IdhZZs()}",
+          "property": "dialog.fechaDeEvento",
+          "outputFormat": "this.value[0][\"Timex\"]",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_IdhZZs()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "0zhYUZ"
+          },
+          "condition": "user.nombre==null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "bKSgTW"
+              },
+              "property": "user.nombre",
+              "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "6bcqse"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_6bcqse()}",
+          "property": "user.nombre",
+          "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
+          "validations": [
+            "@userNomina!=null || @correo!=null"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_6bcqse()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "7XvNmz"
+          },
+          "condition": "user.nombre!=null && dialog.fechaDeEvento!=null",
+          "actions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "LlvbiG"
+              },
+              "method": "POST",
+              "url": "http://localhost:7071/api/asistentes",
+              "resultProperty": "dialog.api_response",
+              "responseType": "json",
+              "contentType": "application/x-www-form-urlencoded",
+              "body": {
+                "fecha": "${dialog.fechaDeEvento}",
+                "nomina": "${user.nombre}"
+              }
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "E4eepX"
+              },
+              "condition": "dialog.api_response.content.Resultado==\"OK\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "TKg8Mj"
+                  },
+                  "activity": "${SendActivity_TKg8Mj()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "T1IOwh"
+                  },
+                  "condition": "dialog.api_response.content.Resultado==\"YaRegistrado\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "VGKass"
+                      },
+                      "activity": "${SendActivity_VGKass()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "sgJnRx"
+                      },
+                      "condition": "dialog.api_response.content.Resultado=='ErrorInsert'",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "flMYqX"
+                          },
+                          "activity": "${SendActivity_flMYqX()}"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.IfCondition",
+                          "$designer": {
+                            "id": "yRDXIX"
+                          },
+                          "condition": "dialog.api_response.content.Resultado=='NoNominaOSesion'",
+                          "actions": [
+                            {
+                              "$kind": "Microsoft.SendActivity",
+                              "$designer": {
+                                "id": "Evyghd"
+                              },
+                              "activity": "${SendActivity_Evyghd()}"
+                            }
+                          ],
+                          "elseActions": [
+                            {
+                              "$kind": "Microsoft.IfCondition",
+                              "$designer": {
+                                "id": "OvMiEe"
+                              },
+                              "condition": "dialog.api_response.content.Resultado=='NoNominaOSesion'",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.SendActivity",
+                                  "$designer": {
+                                    "id": "24PWmz"
+                                  },
+                                  "activity": "${SendActivity_24PWmz()}"
+                                }
+                              ],
+                              "elseActions": [
+                                {
+                                  "$kind": "Microsoft.SendActivity",
+                                  "$designer": {
+                                    "id": "HsQBUu"
+                                  },
+                                  "activity": "${SendActivity_HsQBUu()}"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "wT2uJN"
+              },
+              "activity": "${SendActivity_wT2uJN()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "registerAssistant.lg",
+  "recognizer": "registerAssistant.lu"
+}

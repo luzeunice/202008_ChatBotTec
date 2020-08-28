@@ -1,0 +1,13 @@
+[import](common.lg)
+
+# TextInput_Prompt_Jn4gvY()
+- ¿Me podrías decir tu nómina o correo?
+- ¿Cuál es tu nómina o correo?
+
+
+# TextInput_InvalidPrompt_Jn4gvY()
+- Disculpa, no te entendí, prueba escribiendo tu nómina en formato L01234567 o el correo ejemplo@tec.mx
+# SendActivity_RfoEXp()
+- Listo, te registré como **${user.nombre}**
+# SendActivity_MRUg6f()
+- Lo siento, no te pude registrar correctamente, intenta de nuevo con los formatos de entrada correctos.

@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- Buen día, puedes proporcionarnos tu nómina para una mejor experiencia
+# SendActivity_zBDLwr()
+- Disculpa, no te entendí. Intenta preguntando de otra forma.
+
+
+
+
+
+# SendActivity_Xc9L6H()
+[Activity
+    Text = ¿En qué te podemos ayudar?
+    SuggestedActions = Fechas de próximos Share Skills | Titulos de próximos Share Skills | Impartir un Share Skills | Participar en un Share Skills
+]

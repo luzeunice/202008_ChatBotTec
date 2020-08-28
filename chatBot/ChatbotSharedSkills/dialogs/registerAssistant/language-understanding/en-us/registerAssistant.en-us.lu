@@ -1,0 +1,41 @@
+
+# TextInput_Response_6bcqse
+- Mi nomina es L00818965
+- Mi nomina es L01732945
+- La nomina es L08825013
+- Para que me guardes la nomina es L00473914
+- Mi nómina es L00418304
+- L00912304
+- Es L00812304
+- Soy la nómina L00516409
+- Soy L00818361
+- Mi nomina es  L01234560
+- La nomina es L04567894
+- L04566674
+
+- Mi correo es ejemplo@tec.mx
+- Mi correo es el ejemplo@itesm.mx
+- El correo es ejemplo2@itesm.mx
+- Mi e-mail es eje_mplo@tec.mx
+- Mi e-mail es el eje.mplo@tec.mx
+- El e-mail es eje.mplo24@itesm.mx
+> entity definitions:
+>@ ml identificador
+$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
+$ userNomina: /(L(\d{8}))|(l(\d{8}))/ 
+> !# @app.culture = es-mx
+
+# DateTimeInput_Response_IdhZZs
+- Por favor regístrame a la sesión del 12/10/2020 con la nómina L00818965
+- Por favor regístrame a la sesión del 25/12/2020
+- Me podrías registrar a la plática del 5-08-2020
+- registrar a la del 3/11/2020
+- Registrame en la del 14/10/2020
+- Inscribeme en la del 10-5-2020
+- Ponme en la de 30/7/2020
+- Ponme en la del 28.2.2020
+- Inscribe a L00173927 a 1/2/2020
+- Me puedes poner en la sesión del 02/9/2020 con nómina L01492743
+- Me puedes meter a la platica del 3/4/2020 por fa
+> entity definitions:
+$ userNomina: /(L(\d{8}))|(l(\d{8}))/ 
