@@ -1,0 +1,33 @@
+[import](common.lg)
+
+
+
+
+
+
+
+#PedirNomina 
+- ¿Cual es tu nomina o correo electronico?
+
+#NominaNoExiste
+- No existe 
+
+#NominaExistente
+- Nomina ${dialog.api_response.content.resultado.nombre}
+
+#ErrorConsultaUsuario
+- Error Consulta
+
+
+
+
+
+# TextInput_Prompt_eSpAtJ()
+- ${PedirNomina()}
+
+# SendActivity_KnZ6bu()
+- ${NominaNoExiste()}
+# SendActivity_vjVIGS()
+- ${NominaExistente()}
+# SendActivity_Ss9t4t()
+- ${ErrorConsultaUsuario()}

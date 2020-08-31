@@ -70,11 +70,12 @@
       "intent": "LogIn",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "nFPT7o"
+            "id": "NepDQY"
           },
-          "activity": "${SendActivity_nFPT7o()}"
+          "activityProcessed": true,
+          "dialog": "LogIn"
         }
       ]
     },
@@ -84,6 +85,23 @@
         "id": "U7RK3R"
       },
       "intent": "Menu"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "0dLjQM"
+      },
+      "intent": "Menu_Dialogo_0",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "SnDQqh"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu_Dialogo_0"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

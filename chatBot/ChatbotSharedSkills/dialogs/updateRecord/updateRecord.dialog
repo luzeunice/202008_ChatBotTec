@@ -39,7 +39,8 @@
             "fecha_evento": "${dialog.fecha}"
           },
           "responseType": "json",
-          "resultProperty": "dialog.api_response"
+          "resultProperty": "dialog.api_response",
+          "url": "https://la-fn-app.azurewebsites.net/api/asistente_cancel?code=nP5BDKORzdTwOWrbf0nR9/WjRl3mDltKi2uPLBVHuDKFVtACej4MPg=="
         },
         {
           "$kind": "Microsoft.IfCondition",

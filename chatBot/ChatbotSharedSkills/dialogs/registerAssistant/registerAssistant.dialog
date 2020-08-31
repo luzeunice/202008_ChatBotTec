@@ -55,21 +55,12 @@
           ]
         },
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "6bcqse"
+            "id": "M4dio4"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_6bcqse()}",
-          "property": "user.nombre",
-          "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
-          "validations": [
-            "@userNomina!=null || @correo!=null"
-          ],
-          "invalidPrompt": "${TextInput_InvalidPrompt_6bcqse()}"
+          "activityProcessed": true,
+          "dialog": "userProfile"
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -84,7 +75,7 @@
                 "id": "LlvbiG"
               },
               "method": "POST",
-              "url": "http://localhost:7071/api/asistentes",
+              "url": "https://la-fn-app.azurewebsites.net/api/asistente?code=OIwpPftyYck5W1qXzLoK0fikxwty9Wk7VY5ZuPL2kEKW1pq8zpbbOQ==",
               "resultProperty": "dialog.api_response",
               "responseType": "json",
               "contentType": "application/x-www-form-urlencoded",

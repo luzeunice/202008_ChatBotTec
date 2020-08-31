@@ -1,0 +1,28 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "IsNoKm",
+    "name": "Inicar"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "IxhSB5"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "KK3Kse"
+          },
+          "activity": "${SendActivity_KK3Kse()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Inicar.lg"
+}

@@ -124,19 +124,6 @@
                   "activityProcessed": true
                 }
               ]
-            },
-            {
-              "value": "3",
-              "actions": [
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "xV4gdJ"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "dialogoEjemplo"
-                }
-              ]
             }
           ],
           "default": [

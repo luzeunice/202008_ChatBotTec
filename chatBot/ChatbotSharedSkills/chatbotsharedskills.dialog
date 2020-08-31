@@ -38,13 +38,6 @@
                     "name": "Send a response"
                   },
                   "activity": "${SendActivity_Welcome()}"
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "Xc9L6H"
-                  },
-                  "activity": "${SendActivity_Xc9L6H()}"
                 }
               ]
             }
@@ -145,20 +138,36 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "Mptgpd"
+        "id": "2oUEwP"
       },
-      "intent": "Registro",
+      "intent": "ViewDates",
       "actions": [
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "oLp4MG"
+            "id": "flmpH1"
           },
           "activityProcessed": true,
-          "dialog": "Registro"
+          "dialog": "consultarFechas"
         }
-      ],
-      "condition": "turn.recognized.score > 0.9"
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "KLl2Od"
+      },
+      "intent": "Iniciar",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "hXMIuv"
+          },
+          "activityProcessed": true,
+          "dialog": "Inicar"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

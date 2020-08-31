@@ -27,3 +27,14 @@
 - Menu
 > entity definitions:
 > @ ml city
+
+
+
+
+# Menu_Dialogo_0
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- DIalogoCero
+> entity definitions:
+> @ ml city

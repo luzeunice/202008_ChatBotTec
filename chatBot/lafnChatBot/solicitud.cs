@@ -48,6 +48,7 @@ namespace Company.Function
                 fecha = fecha ?? data?.fecha;
                 titulo = titulo ?? data?.titulo;
                 comentarios = comentarios ?? data?.comentarios;
+                DateTime fechaTemp=DateTime.Now;
 
                 nomina=nomina.ToUpper();
                 var provider = new CultureInfo("es-MX");
@@ -55,16 +56,15 @@ namespace Company.Function
                 if (fecha=="" && nomina ==""){
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="NoNominaOFecha"}));
                 }
-                else if (!Regex.IsMatch(nomina.Trim(),@"(^L(\d{8})$)|^l(\d{8})$") || !Regex.IsMatch(fecha.Trim(),@"^[0-3]{0,1}[0-9]{1}\/[0-1]{0,1}[0-9]{1}\/20[0-9]{2}$")){
+                else if (!Regex.IsMatch(nomina.Trim(),@"(^L(\d{8})$)|^l(\d{8})$") || !Regex.IsMatch(fecha.Trim(),@"^20[0-9]{2}\-[0-1]{0,1}[0-9]{1}\-[0-3]{0,1}[0-9]{1}$")){
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="FormatosIncorrectos"}));
                 }
 
                 try{
-                    DateTime fechaTemp=DateTime.ParseExact(fecha, "d/M/yyyy", provider);
+                    fechaTemp=DateTime.ParseExact(fecha, "yyyy-M-d", provider);
                     if (DateTime.Now>fechaTemp){
                         return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="SesionExpirada"}));
                     }
-                    fecha=fechaTemp.ToString("dd/MM/yyyy");
                 }
                 catch{
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="FormatosIncorrectos"}));
@@ -79,6 +79,7 @@ namespace Company.Function
                         Mode = RetryMode.Exponential
                     }
                 };
+                DateTime fechaSesion=DateTime.ParseExact(fechaTemp.ToString("yyyy-MM-dd")+" "+"12:00", "yyyy-MM-dd HH:mm", null).ToUniversalTime();
                 var client = new SecretClient(new Uri("https://kevaultchatbot.vault.azure.net/"), new DefaultAzureCredential(),options);
                 KeyVaultSecret secret = client.GetSecret("storageTablas");
                 string secretValue = secret.Value;
@@ -95,7 +96,7 @@ namespace Company.Function
                 entity.titulo=titulo;
                 entity.comentarios=comentarios;
                 entity.nomina_sesion1=nomina;
-                entity.fecha_evento= DateTime.UtcNow;
+                entity.fecha_evento= fechaSesion;
                 entity.estatus="Disponible";
                 entity.idSesion=rowKey;
                 TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(entity);

@@ -1,8 +1,6 @@
 [import](common.lg)
 
 
-# TextInput_Prompt_6bcqse()
-- Voy a necesitar tu nómina para poder registrarte.
 
 # SendActivity_TKg8Mj()
 - Listo, te registré en el evento del **${dialog.fechaDeEvento}** con la nómina **${user.nomina}**
@@ -21,8 +19,6 @@
 
 # SendActivity_HsQBUu()
 - Hubo un error al momento de hacer la petición, intenta de nuevo más tarde
-# TextInput_InvalidPrompt_6bcqse()
-- Disculpa, no te entendí, prueba escribiendo tu nómina en formato L01234567 o el correo ejemplo@tec.mx
 
 # SendActivity_wT2uJN()
 - Lo siento, no pude hacer el registro, prueba volviendo a hacer la solicitud con los formatos correctos

@@ -1,28 +1,4 @@
 
-# TextInput_Response_6bcqse
-- Mi nomina es L00818965
-- Mi nomina es L01732945
-- La nomina es L08825013
-- Para que me guardes la nomina es L00473914
-- Mi nómina es L00418304
-- L00912304
-- Es L00812304
-- Soy la nómina L00516409
-- Soy L00818361
-- Mi nomina es  L01234560
-- La nomina es L04567894
-- L04566674
-
-- Mi correo es ejemplo@tec.mx
-- Mi correo es el ejemplo@itesm.mx
-- El correo es ejemplo2@itesm.mx
-- Mi e-mail es eje_mplo@tec.mx
-- Mi e-mail es el eje.mplo@tec.mx
-- El e-mail es eje.mplo24@itesm.mx
-> entity definitions:
->@ ml identificador
-$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
-$ userNomina: /(L(\d{8}))|(l(\d{8}))/ 
 > !# @app.culture = es-mx
 
 # DateTimeInput_Response_IdhZZs
@@ -39,8 +15,3 @@ $ userNomina: /(L(\d{8}))|(l(\d{8}))/
 - Me puedes meter a la platica del 3/4/2020 por fa
 > entity definitions:
 $ userNomina: /(L(\d{8}))|(l(\d{8}))/ 
-
-
-# Registration
-> add some example phrases to trigger this intent:
-- Participar en un Share Skills
