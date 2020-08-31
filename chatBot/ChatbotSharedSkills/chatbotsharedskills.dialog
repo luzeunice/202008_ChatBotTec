@@ -141,6 +141,24 @@
         "id": "XdMbei"
       },
       "intent": "updateRecord"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Mptgpd"
+      },
+      "intent": "Registro",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "oLp4MG"
+          },
+          "activityProcessed": true,
+          "dialog": "Registro"
+        }
+      ],
+      "condition": "turn.recognized.score > 0.9"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

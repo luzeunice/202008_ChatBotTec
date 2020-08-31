@@ -39,3 +39,8 @@ $ userNomina: /(L(\d{8}))|(l(\d{8}))/
 - Me puedes meter a la platica del 3/4/2020 por fa
 > entity definitions:
 $ userNomina: /(L(\d{8}))|(l(\d{8}))/ 
+
+
+# Registration
+> add some example phrases to trigger this intent:
+- Participar en un Share Skills

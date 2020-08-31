@@ -1,0 +1,29 @@
+
+# ViewSession
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+
+-  Consultar Sesiones
+
+> entity definitions:
+> @ ml city
+
+# LogIn
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Iniciar
+- Autenticar
+- Ingresar nomina
+- Ingresar Correo
+> entity definitions:
+> @ ml city
+
+# Menu
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Menu
+> entity definitions:
+> @ ml city
