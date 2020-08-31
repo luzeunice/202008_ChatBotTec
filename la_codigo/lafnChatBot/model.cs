@@ -18,6 +18,8 @@ namespace CosmosTableSamples.Model
         public string nomina_asistente { get; set; }
         public string fechaRegistro { get; set; }
         public string asistencia { get; set; }
+
+        public string estatus { get; set; }
     }
 
     public class Sesion : TableEntity
@@ -33,11 +35,17 @@ namespace CosmosTableSamples.Model
         }
         
         public DateTime fecha_evento { get; set; }
-        public string nomina1 { get; set; }
+        public string nomina_sesion1 { get; set; }
+        public string nomina_sesion2 { get; set; }
         public string titulo { get; set; }
         public string estatus { get; set; }
         public string idSesion { get; set; }
+        public string comentarios{ get; set; }
+        public string url { get; set; }
+
+
     }
+
     public class Usuario : TableEntity
     {
         public Usuario()
@@ -52,5 +60,7 @@ namespace CosmosTableSamples.Model
         public string nomina { get; set; }
         public string nombre { get; set; }
         public string correo { get; set; }
+
+        public string sexo { get; set; }
     }
 }

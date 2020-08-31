@@ -2,9 +2,8 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "$designer": {
-      "name": "la_ChatBot",
-      "description": "Programa para realizar ChatBot de Poc Share Skill",
-      "id": "cH5Bn1"
+      "name": "laChatBotPrueba",
+      "id": "bVK07A"
     }
   },
   "autoEndDialog": true,
@@ -42,28 +41,28 @@
                 }
               ]
             }
-          ],
-          "value": "dialog.foreach.value"
-        },
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "g9Or44"
+      },
+      "intent": "Cartas",
+      "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "tKan9D"
+            "id": "YX2x4O"
           },
-          "activityProcessed": true,
-          "dialog": "pedirNomina"
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "NUDxaP"
-          },
-          "activityProcessed": true,
-          "dialog": "menu_principal"
+          "activity": "${SendActivity_YX2x4O()}"
         }
       ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
-  "generator": "la_chatbot.lg"
+  "generator": "lachatbotprueba.lg",
+  "recognizer": "lachatbotprueba.lu"
 }
