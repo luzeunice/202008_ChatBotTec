@@ -58,9 +58,34 @@
           "alwaysPrompt": false,
           "allowInterruptions": false,
           "prompt": "${DateTimeInput_Prompt_uLj44B()}",
-          "outputFormat": "this.value[0][\"Timex\"]",
+          "outputFormat": "trim(formatDateTime(this.value[0][\"Timex\"], 'yyyy-MM-dd'))",
           "property": "dialog.fecha",
           "invalidPrompt": "${DateTimeInput_InvalidPrompt_uLj44B()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "9tVLbn"
+          },
+          "condition": "user.nombre==null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "pHb7BP"
+              },
+              "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
+              "property": "user.nombre"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "jwWoFp"
+          },
+          "activityProcessed": true,
+          "dialog": "userProfile"
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -68,7 +93,7 @@
             "id": "qgdAMf"
           },
           "method": "POST",
-          "url": "http://localhost:7071/api/solicitudes",
+          "url": "https://la-fn-app.azurewebsites.net/api/solicitud?code=3di0i84tGJ5r1c140VOrz4LvjQmJ/QVSTvHuUAz1hLnElunIQlaQLQ==",
           "body": {
             "titulo": "${dialog.sessionTitle}",
             "fecha": "${dialog.fecha}",

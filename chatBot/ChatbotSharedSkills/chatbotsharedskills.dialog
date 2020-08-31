@@ -141,6 +141,23 @@
         "id": "XdMbei"
       },
       "intent": "updateRecord"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "2oUEwP"
+      },
+      "intent": "ViewDates",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "flmpH1"
+          },
+          "activityProcessed": true,
+          "dialog": "consultarFechas"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

@@ -2,22 +2,25 @@
 # AddSession
 - Necesito añadir una sesión 
 - Quiero añadir una sesión
-- Me gustaría dar una sesión de skills de {sessionTitle=Fundamentos de Azure}
-- Quiero dar una plática de {sessionTitle=Fundamentos de Azure}
-- Quiero agendar una sesión de {sessionTitle=Estadísticas con excel}
-- Puedes poner una sesión de shared skills de {sessionTitle=principios de ciencia de datos}
-- Agendar sesión de {sessionTitle=Manejo de datos personales}
-- Pon una sesion para {sessionTitle=Cómo tener una comunicación efectiva}
-- Quiero dar una platica de {sessionTitle=Uso de SQL}
-- Quiero dar una sesion de {sessionTitle=historia de la musica}
-- [Por favor] añade una sesión de {sessionTitle=Comunicacion Efectiva}
-- [Sabes si puedo] dar una sesion de {sessionTitle=Desarrollos agiles}
+- Me gustaría dar una sesión de skills de Fundamentos de Azure
+- Quiero dar una plática de Fundamentos de Azure
+- Quiero agendar una sesión de Estadísticas con excel
+- Puedes poner una sesión de shared skills de principios de ciencia de datos
+- Agendar sesión de Manejo de datos personales
+- Pon una sesion para Cómo tener una comunicación efectiva
+- Quiero dar una platica de Uso de SQL
+- Quiero dar una sesion de historia de la musica
+- [Por favor] añade una sesión de Comunicacion Efectiva
+- [Sabes si puedo] dar una sesion de Desarrollos agiles
 - Nueva sesión
 - Nueva plática
 - Nueva sesion
 - Añade una plática
 - Agendar sesión
 - Agregar plática
+- Quiero impartir un share skills
+- Quiero dar un share skills
+- Quiero agendar un nuevo share skills
 > entity definitions
 @ ml sessionTitle
 > phrase list definitions
@@ -33,26 +36,29 @@
 
 
 # ViewSessions
-- Me puedes mostrar la agenda pro favor?
-- Me puestras la agenda, por favor?
 - Sabes cuáles son las siguientes sesiones?
-- Me muestras las sesiones proximas por fa?
+- Me muestras cuáles son las sesiones proximas por fa?
 - Muesta sesiones siguientes
 - Muestra las pláticas
 - Sabes cuáles son las pláticas que siguen?
+- Culales son los proximos share skills
 - Quiero ver las pláticas que se van a dar
-- Quiero ver las sesiones que se van a dar
+- Quiero ver las siguientes sesiones de share skills
 - A ver las sesiones
 - Ver pláticas
 - Ver sesiones
+- Fechas de proximos share skills
+- Ver próximos share skills
 
 # Registration
 > add some example phrases to trigger this intent:
-- Por favor regístrame a la sesión del 12/10/2020 con la nómina L00818965
+- Por favor regístrame a la sesión del 12/10/2021 con la nómina L00818965
 - Por favor regístrame a la sesión del 25/12/2020
-- Me podrías registrar a la plática del 5/08/2020
+- Me podrías registrar a la plática del 5/08/2022
+- Registrame en la share skills del 3-12-2021
 - registrar a la del 3/11/2020
 - Registrame en la del 14/10/2020
+- registrame en el share skills del 14-9-2024
 - Inscribeme en la del 10/5/2020
 - Ponme en la de 30/7/2020
 - Ponme en la del 28/2/2020
@@ -69,9 +75,13 @@
 - Registrame a una sesión
 - Quiero registrarme a una sesión
 - Quiero registrarme en una plática
+- Quiero registrarme a un share skills
 - Registrarme en una sesión
+- Inscribeme a una plática
+- Inscribeme a un share skills
+- Participar en un share skills
 > entity definitions:
-$ userNomina: /(^L(\d{8})$)|^l(\d{8})$/ 
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
 $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 # UserProfile
 - empezar
@@ -84,7 +94,7 @@ $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/
 - Es L00812304
 - Soy la nómina L00516409
 - Soy L00818361
-$ userNomina: /(^L(\d{8})$)|^l(\d{8})$/ 
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
 > !# @app.culture = es-mx
 
 # updateRecord
@@ -97,3 +107,13 @@ $ userNomina: /(^L(\d{8})$)|^l(\d{8})$/
 
 > entity definitions:
 > @ ml city
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
+# ViewDates
+- Me puedes mostrar la agenda pro favor?
+- Me puestras la agenda, por favor?
+- Sabes cuándo son las siguientes sesiones?
+- Me muestras cuándo son las sesiones proximas por fa?
+- Muesta fechas de sesiones sesiones siguientes
+- Sabes cuándo son las pláticas que siguen?
+- A ver las fechas de las siguientes sesiones
+- Fechas de proximos share skills

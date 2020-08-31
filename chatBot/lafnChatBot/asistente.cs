@@ -25,7 +25,7 @@ namespace Company.Function
     {
         [FunctionName("asistente")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post","delete", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -43,20 +43,21 @@ namespace Company.Function
                 fecha = fecha ?? data?.fecha;
                 nomina=nomina.ToUpper();
                 var provider = new CultureInfo("es-MX");
+                DateTime fechaTemp=DateTime.Now;
 
                 if (fecha=="" && nomina ==""){
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="NoNominaOSesion"}));
                 }
-                else if (!Regex.IsMatch(nomina.Trim(),@"(^L(\d{8})$)|^l(\d{8})$") || !Regex.IsMatch(fecha.Trim(),@"^[0-3]{0,1}[0-9]{1}\/[0-1]{0,1}[0-9]{1}\/20[0-9]{2}$")){
+                else if (!Regex.IsMatch(nomina.Trim(),@"(^L(\d{8})$)|^l(\d{8})$") || !Regex.IsMatch(fecha.Trim(),@"^20[0-9]{2}\-[0-1]{0,1}[0-9]{1}\-[0-3]{0,1}[0-9]{1}$")){
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="FormatosIncorrectos"}));
                 }
 
                 try{
-                    DateTime fechaTemp=DateTime.ParseExact(fecha, "d/M/yyyy", provider);
+                    fechaTemp=DateTime.ParseExact(fecha, "yyyy-M-d", provider);
                     if (DateTime.Now>fechaTemp){
                         return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="SesionExpirada"}));
                     }
-                    fecha=fechaTemp.ToString("dd/MM/yyyy");
+                    //fecha=fechaTemp;//.ToString("dd-MM-yyyy");
                 }
                 catch{
                     log.LogInformation("FALLO EN PARSE");
@@ -72,6 +73,7 @@ namespace Company.Function
                         Mode = RetryMode.Exponential
                     }
                 };
+                DateTime fechaSesion=DateTime.ParseExact(fechaTemp.ToString("yyyy-MM-dd")+" "+"12:00", "yyyy-MM-dd HH:mm", null).ToUniversalTime();
                 var client = new SecretClient(new Uri("https://kevaultchatbot.vault.azure.net/"), new DefaultAzureCredential(),options);
                 KeyVaultSecret secret = client.GetSecret("storageTablas");
                 string secretValue = secret.Value;
@@ -82,7 +84,7 @@ namespace Company.Function
                 CloudTable tableUsuario = tableClient.GetTableReference("usuario");
                 CloudTable tableSesion = tableClient.GetTableReference("sesion");
                 List<Usuario>usuario =  tableUsuario.CreateQuery<Usuario>().AsQueryable<Usuario>().Where(e=>e.PartitionKey=="Empleado" && e.nomina == nomina).ToList();
-                List<Sesion>sesion =  tableSesion.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e=>e.PartitionKey=="Sesiones" && e.fecha_evento == DateTime.UtcNow && e.estatus=="Reservada").ToList();
+                List<Sesion>sesion =  tableSesion.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e=>e.PartitionKey=="Sesiones" && e.fecha_evento == fechaSesion  && e.estatus=="Reservada").ToList();
                 if (usuario.Count==1 && sesion.Count==1){
                     List<Asistente>asistente=tableAsistente.CreateQuery<Asistente>().AsQueryable<Asistente>().Where(e=>e.PartitionKey==sesion[0].idSesion && e.RowKey == nomina).ToList();
                     if (asistente.Count>0){
@@ -109,9 +111,14 @@ namespace Company.Function
                     }
                 }
                 else{
+                    log.LogInformation(fechaSesion.ToString());
+                    log.LogInformation(sesion.Count.ToString());
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="NoNominaOSesion"}));
                 }
                 
+                
+            }
+            if ((string)req.Method=="DELETE"){
             }
             return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="OK"}));
         }

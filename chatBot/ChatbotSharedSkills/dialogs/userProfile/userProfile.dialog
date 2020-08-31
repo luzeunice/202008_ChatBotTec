@@ -16,44 +16,53 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "Jn4gvY"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_Jn4gvY()}",
-          "property": "user.nombre",
-          "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
-          "validations": [
-            "@userNomina!=null || @correo!=null"
-          ],
-          "invalidPrompt": "${TextInput_InvalidPrompt_Jn4gvY()}"
-        },
-        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "r58Ii8"
+            "id": "yJDy8R"
           },
-          "condition": "user.nombre!=null",
+          "condition": "user.nombre==null",
           "actions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.TextInput",
               "$designer": {
-                "id": "RfoEXp"
+                "id": "Jn4gvY"
               },
-              "activity": "${SendActivity_RfoEXp()}"
-            }
-          ],
-          "elseActions": [
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_Jn4gvY()}",
+              "property": "user.nombre",
+              "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
+              "validations": [
+                "@userNomina!=null || @correo!=null"
+              ],
+              "invalidPrompt": "${TextInput_InvalidPrompt_Jn4gvY()}"
+            },
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "MRUg6f"
+                "id": "r58Ii8"
               },
-              "activity": "${SendActivity_MRUg6f()}"
+              "condition": "user.nombre!=null",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "RfoEXp"
+                  },
+                  "activity": "${SendActivity_RfoEXp()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "MRUg6f"
+                  },
+                  "activity": "${SendActivity_MRUg6f()}"
+                }
+              ]
             }
           ]
         }
