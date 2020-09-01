@@ -15,34 +15,27 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.ChoiceInput",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "dhD9en"
+            "id": "tG2jkC"
           },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${ChoiceInput_Prompt_dhD9en()}",
-          "choiceOptions": {
-            "includeNumbers": false,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+          "activity": "${SendActivity_tG2jkC()}"
+        }
+      ],
+      "runOnce": false
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "M4i2UV"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "RaV1CR"
           },
-          "outputFormat": "value",
-          "choices": [
-            "1- Fechas de próximos Share Skills",
-            "2- Títulos de próximos Share Skills ",
-            "3- Videos de SS anteriores",
-            "4- Respuesta de encuestas de salida",
-            "5- Impartir un Share Skills",
-            "6-  Participar en un Share Skills",
-            "7- Comentarios/Otros"
-          ],
-          "style": "heroCard",
-          "property": "user.style"
+          "activity": "${SendActivity_RaV1CR()}"
         }
       ]
     }

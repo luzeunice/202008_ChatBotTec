@@ -36,7 +36,7 @@
             "id": "Se0Mm1"
           },
           "method": "GET",
-          "url": "https://la-fn-app.azurewebsites.net/api/lasesiones?code=qPFiuCovKUo8j9e2w2x6CX3deDkvJQvsyaEZvoTztwlQ9W3o1Pc5gg==",
+          "url": "https://la-fn-app.azurewebsites.net/api/sesion?code=maEnfmz/YCmNawA/tRseJUY7oL3h6DPGG4Nyeo7h4TaWk7DkuoahMQ==",
           "body": {
             "identificador": "${user.name}"
           },
@@ -66,6 +66,14 @@
               "activity": "${SendActivity_OMSVM3()}"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "6kjgXQ"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu"
         }
       ]
     }

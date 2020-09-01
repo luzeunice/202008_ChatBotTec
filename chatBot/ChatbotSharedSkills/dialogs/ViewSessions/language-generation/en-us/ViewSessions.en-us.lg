@@ -1,17 +1,17 @@
 [import](common.lg)
 
 # SendActivity_pkrzzY()
-- Buscando titulos
+- Buscando fechas y títulos de siguientes platicas
 
 # SendActivity_90V0L8()
-- Error
-
+- ``` Las fechas de los próximos eventos son las siguientes: 
+- ${dialog.api_response.content.resultado1.fecha_evento} : ${dialog.api_response.content.resultado1.titulo}
+- ${dialog.api_response.content.resultado2.fecha_evento} : ${dialog.api_response.content.resultado2.titulo}
+- ${dialog.api_response.content.resultado3.fecha_evento} : ${dialog.api_response.content.resultado1.titulo}
+```
 
 
 
 # SendActivity_OMSVM3()
-- ``` Las fechas son: 
-- ${dialog.api_response.content.resultado1.fecha}
-- ${dialog.api_response.content.resultado2.fecha}
-- ${dialog.api_response.content.resultado2.fecha}
-```
+- Contactar al administrador : *anantonieta@tec.mx*
+

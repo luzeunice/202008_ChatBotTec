@@ -148,14 +148,6 @@
                       ]
                     },
                     {
-                      "$kind": "Microsoft.BeginDialog",
-                      "$designer": {
-                        "id": "c2jYj8"
-                      },
-                      "activityProcessed": true,
-                      "dialog": "Menu"
-                    },
-                    {
                       "$kind": "Microsoft.BreakLoop",
                       "$designer": {
                         "id": "RP1uWJ"
@@ -193,8 +185,18 @@
               ]
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "XqhoAn"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu"
         }
-      ]
+      ],
+      "condition": "user.nomina=='Sin Datos'",
+      "runOnce": true
     }
   ],
   "generator": "Inicar.lg"

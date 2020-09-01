@@ -16,6 +16,26 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "0SUBIJ"
+          },
+          "assignments": [
+            {
+              "property": "user.nomina",
+              "value": "Sin Datos"
+            },
+            {
+              "property": "user.nombre",
+              "value": "Sin Datos"
+            },
+            {
+              "property": "user.correo",
+              "value": "Sin Datos"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",
