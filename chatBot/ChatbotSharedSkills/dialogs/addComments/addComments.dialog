@@ -1,0 +1,28 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "0i7oaK",
+    "name": "addComments"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "hTXK88"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "m8fKkJ"
+          },
+          "activity": "${SendActivity_m8fKkJ()}"
+        }
+      ]
+    }
+  ],
+  "generator": "addComments.lg"
+}

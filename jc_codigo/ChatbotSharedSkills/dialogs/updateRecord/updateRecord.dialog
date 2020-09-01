@@ -1,0 +1,29 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "p5skFd",
+    "name": "updateRecord",
+    "description": "Actualiza el estatus de la persona que quiere ir a una reunión."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "wi3uw0"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8G9l5D"
+          },
+          "activity": "${SendActivity_8G9l5D()}"
+        }
+      ]
+    }
+  ],
+  "generator": "updateRecord.lg"
+}

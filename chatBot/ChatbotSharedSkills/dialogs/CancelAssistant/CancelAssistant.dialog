@@ -1,0 +1,144 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fw8PId",
+    "name": "CancelAssistant",
+    "description": "Cancelar la asistencia"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "7BFg5o"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "HkYmBK"
+          },
+          "properties": [
+            "dialog.api_response"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "4nU43M"
+          },
+          "property": "dialog.fechaDeEvento",
+          "value": "=coalesce(@fechaDeEvento, $fechaDeEvento)"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "FUgz5X"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_FUgz5X()}",
+          "property": "dialog.fechaDeEvento",
+          "outputFormat": "this.value[0][\"Timex\"]",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_FUgz5X()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "9Fa2IH"
+          },
+          "method": "POST",
+          "url": "https://la-fn-app.azurewebsites.net/api/asistente_cancel?code=nP5BDKORzdTwOWrbf0nR9/WjRl3mDltKi2uPLBVHuDKFVtACej4MPg==",
+          "body": {
+            "identificador": "${user.nomina}",
+            "fecha_evento": "${dialog.fechaDeEvento}"
+          },
+          "resultProperty": "dialog.api_response"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "dNW0ya"
+          },
+          "condition": "dialog.api_response.statusCode==200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "SAcxNC"
+              },
+              "condition": "dialog.api_response.content.resultado",
+              "cases": [
+                {
+                  "value": "SesionNovalida",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "Q0Ml6D"
+                      },
+                      "activity": "${SendActivity_Q0Ml6D()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "UsuarioNoBaseDatos",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "ay5Jr4"
+                      },
+                      "activity": "${SendActivity_ay5Jr4()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "NohayInformacion",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "utKgDs"
+                      },
+                      "activity": "${SendActivity_utKgDs()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "Cencelando",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "2f60Fl"
+                      },
+                      "activity": "${SendActivity_2f60Fl()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "ErrorUpdate",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "tOmtrK"
+                      },
+                      "activity": "${SendActivity_tOmtrK()}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CancelAssistant.lg"
+}

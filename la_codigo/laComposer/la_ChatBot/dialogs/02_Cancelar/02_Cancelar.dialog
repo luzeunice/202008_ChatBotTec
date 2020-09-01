@@ -1,0 +1,134 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "eSXD68",
+    "name": "02_Cancelar"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "sa8J34"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "QBkRLx"
+          },
+          "properties": [
+            "dialog.api_response",
+            "user.text"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "QBdvFC"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_QBdvFC()}",
+          "property": "user.text"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "naG3RA"
+          },
+          "method": "POST",
+          "url": "https://la-fn-app.azurewebsites.net/api/laasistentes_cancel?code=uVCrFHOnXK7FdXxF20U9MgYwQumw1nJ04mDt/ShJWXccuonv6/boog==",
+          "body": {
+            "identificador": "${user.name}",
+            "fecha_evento": "${user.text}"
+          },
+          "resultProperty": "dialog.api_response"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CeQQZl"
+          },
+          "condition": "dialog.api_response.statusCode==200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "XqdqQ4"
+              },
+              "condition": "dialog.api_response.content.resultado",
+              "cases": [
+                {
+                  "value": "SesionNovalida",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "GkLTmh"
+                      },
+                      "activity": "${SendActivity_GkLTmh()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "UsuarioNoBaseDatos",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "E022HX"
+                      },
+                      "activity": "${SendActivity_E022HX()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "NohayInformacion",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "XM7PyV"
+                      },
+                      "activity": "${SendActivity_XM7PyV()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "Cencelando",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "fHXmFO"
+                      },
+                      "activity": "${SendActivity_fHXmFO()}"
+                    }
+                  ]
+                },
+                {
+                  "value": "ErrorUpdate",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "Jp1DOn"
+                      },
+                      "activity": "${SendActivity_Jp1DOn()}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "02_Cancelar.lg"
+}

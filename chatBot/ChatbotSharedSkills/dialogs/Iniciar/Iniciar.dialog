@@ -1,0 +1,195 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "vfHHvT",
+    "name": "Iniciar"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "SNm9Xy"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "e2ctjU"
+          },
+          "properties": [
+            "dialog.api_response"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Bgb7Sm"
+          },
+          "property": "user.loop",
+          "value": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "OisYup"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "user.loop",
+          "actions": [
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "FiTOlJ"
+              },
+              "properties": [
+                "dialog.api_response",
+                "user.identificador"
+              ]
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "fUUtIT"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_fUUtIT()}",
+              "property": "user.identificador"
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "WhhpET"
+              },
+              "method": "POST",
+              "body": {
+                "identificador": "${user.identificador}"
+              },
+              "resultProperty": "dialog.api_response",
+              "responseType": "json",
+              "url": "https://la-fn-app.azurewebsites.net/api/usuario?code=85HQb7nUHfbTxjFa39G2eEjQVXdQwYiyqYCYKAfrNQk6CqQaLT8j5A=="
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "1gYPQV"
+              },
+              "condition": "dialog.api_response.statusCode==200",
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "Zbx2dJ"
+                  },
+                  "condition": "dialog.api_response.content.resultado.nombre==\"Sin Datos\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "Tel4oC"
+                      },
+                      "condition": "dialog.foreach.index==2",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "o467XZ"
+                          },
+                          "activity": "${SendActivity_o467XZ()}"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "BI4DlY"
+                          },
+                          "activity": "${SendActivity_BI4DlY()}"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "XZ5yJv"
+                      },
+                      "activity": "${SendActivity_XZ5yJv()}"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "prfoxR"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.nomina",
+                          "value": "=dialog.api_response.content.resultado.nomina"
+                        },
+                        {
+                          "property": "user.nombre",
+                          "value": "=dialog.api_response.content.resultado.nombre"
+                        },
+                        {
+                          "property": "user.correo",
+                          "value": "=dialog.api_response.content.resultado.correo"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.BreakLoop",
+                      "$designer": {
+                        "id": "dFY26k"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "uYWL8r"
+                  },
+                  "condition": "dialog.foreach.index==2",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "apuFcU"
+                      },
+                      "activity": "${SendActivity_apuFcU()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "typrNY"
+                      },
+                      "activity": "${SendActivity_typrNY()}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "condition": "user.nombre=='Sin Datos'",
+      "runOnce": false
+    }
+  ],
+  "generator": "Iniciar.lg"
+}

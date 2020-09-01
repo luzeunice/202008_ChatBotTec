@@ -1,0 +1,43 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "hT73mE",
+    "name": "Cancelar"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "xLvgwv"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7RRNHU"
+          },
+          "activity": "${SendActivity_7RRNHU()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "8COjB6"
+          },
+          "activityProcessed": true
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "D5eHCG"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu"
+        }
+      ]
+    }
+  ],
+  "generator": "Cancelar.lg"
+}

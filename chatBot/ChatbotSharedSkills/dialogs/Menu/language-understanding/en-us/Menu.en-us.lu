@@ -1,0 +1,8 @@
+
+# Otro
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Otro
+> entity definitions:
+> @ ml city

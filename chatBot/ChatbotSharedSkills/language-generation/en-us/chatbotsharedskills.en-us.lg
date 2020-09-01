@@ -1,0 +1,42 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- ${HeroCard()}
+
+# SendActivity_zBDLwr()
+- Disculpa, no te entendí. Intenta preguntando de otra forma.
+
+
+
+# HeroCard
+[HeroCard
+    title = ShaSBot
+    subtitle = Share Skill Bot
+    text = Nuestro espacio para aprender y crecer
+    image = https://la0chatbot0public.blob.core.windows.net/imagenes/shareSkill_00.png
+    buttons = Iniciar
+]
+# SendActivity_JntGES()
+- Cancelando...
+
+
+
+
+
+
+# SendActivity_6ugTvn()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_UgYX4T()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_If9kp6()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_5cFXLc()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_x6k39t()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_IhYknm()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_mTI1x0()
+ - Tienes que iniciar sesión antes. 
+# SendActivity_PIE6uG()
+ - Tienes que iniciar sesión antes. 
