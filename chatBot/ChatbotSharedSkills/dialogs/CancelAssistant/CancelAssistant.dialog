@@ -71,7 +71,7 @@
               "$designer": {
                 "id": "SAcxNC"
               },
-              "condition": "dialog.api_response.content.resultado",
+              "condition": "dialog.api_response.content.Resultado",
               "cases": [
                 {
                   "value": "SesionNovalida",

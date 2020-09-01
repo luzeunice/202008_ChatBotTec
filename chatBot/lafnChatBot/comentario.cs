@@ -111,9 +111,9 @@ namespace comentario.usuario
                  * ***********************************************************/
                 if (usuario == null || usuario.Count() == 0)
                 {
-                    responseMessageS = JsonConvert.SerializeObject(new { Resultado = "UsuarioNoBaseDatos" });
+                    responseMessageS = "UsuarioNoBaseDatos";
 
-                    return new OkObjectResult(responseMessageS);
+                    return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = "UsuarioNoBaseDatos" }));
                 }
                 else
                 {
@@ -147,14 +147,14 @@ namespace comentario.usuario
                         return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado = "ErrorUpdate" }));
                     }
 
-                    return new OkObjectResult(responseMessageS);
+                    return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado =responseMessageS}));
                 }
 
 
 
             }
 
-            return new OkObjectResult("OK");
+            return new OkObjectResult(JsonConvert.SerializeObject(new { Resultado =responseMessageS}));
         }
     }
 }

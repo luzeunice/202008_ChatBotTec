@@ -132,7 +132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#AddSession.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -149,7 +150,8 @@
           "activityProcessed": true,
           "dialog": "ViewSessions"
         }
-      ]
+      ],
+      "condition": "#ViewSessions.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -218,7 +220,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#Registration.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnUnknownIntent",
@@ -227,11 +230,20 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.QnAMakerDialog",
           "$designer": {
-            "id": "zBDLwr"
+            "id": "5hWhTp"
           },
-          "activity": "${SendActivity_zBDLwr()}"
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "${QnAMakerDialog_NoAnswer_5hWhTp()}",
+          "threshold": 0.8,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
         }
       ]
     },
@@ -256,7 +268,8 @@
           },
           "activityProcessed": true
         }
-      ]
+      ],
+      "condition": "#Cancelar.Scrore>=0.9"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -273,7 +286,8 @@
           "activityProcessed": true,
           "dialog": "Menu"
         }
-      ]
+      ],
+      "condition": "#Menu.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -290,7 +304,8 @@
           "activityProcessed": true,
           "dialog": "Iniciar"
         }
-      ]
+      ],
+      "condition": "#Iniciar.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -307,7 +322,8 @@
           "activityProcessed": true,
           "dialog": "ViewVideo"
         }
-      ]
+      ],
+      "condition": "#ViewVideo.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -324,7 +340,8 @@
           "activityProcessed": true,
           "dialog": "viewSurveyResult"
         }
-      ]
+      ],
+      "condition": "#viewSurveyResult.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -393,7 +410,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#cancelAssistant.Scrore>=0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -462,7 +480,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#addComments.Scrore>=0.8"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
