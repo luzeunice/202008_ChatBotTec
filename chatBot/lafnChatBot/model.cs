@@ -63,4 +63,26 @@ namespace CosmosTableSamples.Model
 
         public string sexo { get; set; }
     }
+
+        public class Comentario : TableEntity
+    {
+        public Comentario()
+        {
+        }
+
+        public Comentario(string partition, string row)
+        {
+            PartitionKey = partition;
+            RowKey = row;
+        }
+        
+        public string nomina { get; set; }
+        public DateTime fecha_comentario { get; set; }
+        public string comentario_det { get; set; }
+        public string estatus { get; set; }
+        
+
+    }
+
+
 }
