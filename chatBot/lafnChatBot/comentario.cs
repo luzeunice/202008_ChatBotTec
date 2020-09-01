@@ -71,7 +71,7 @@ namespace comentario.usuario
                  ****************************/
 
                 identificador = req.Query["identificador"];
-                comentario_det = req.Query["comentario_det"];
+                string comentario_det = req.Query["comentario_det"];
 
 
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
@@ -127,7 +127,7 @@ namespace comentario.usuario
                         Comentario entity = new Comentario("Comentario", rowKey);
 
                         entity.nomina = identificador;
-                        entity.fecha_comentario = DateTime.UtcNow();
+                        entity.fecha_comentario = DateTime.Now;
                         entity.comentario_det = comentario_det;
                         entity.estatus = "Nuevo";
 
