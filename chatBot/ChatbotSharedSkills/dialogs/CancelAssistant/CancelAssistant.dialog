@@ -1,0 +1,22 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fw8PId",
+    "name": "CancelAssistant",
+    "description": "Cancelar la asistencia"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "7BFg5o"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "CancelAssistant.lg"
+}

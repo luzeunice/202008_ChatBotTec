@@ -1,0 +1,30 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "nNNaBb",
+    "name": "ViewVideo",
+    "description": "Consultar los videos"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "MwQKQC"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WZ2Yjq",
+            "name": "Send a response"
+          },
+          "activity": "${SendActivity_WZ2Yjq()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ViewVideo.lg"
+}

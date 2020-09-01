@@ -134,60 +134,9 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "4wugDx"
-      },
-      "intent": "UserProfile",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "qlhjqC"
-          },
-          "activityProcessed": true,
-          "dialog": "userProfile"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "XdMbei"
       },
       "intent": "updateRecord"
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "2oUEwP"
-      },
-      "intent": "ViewDates",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "flmpH1"
-          },
-          "activityProcessed": true,
-          "dialog": "consultarFechas"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "KLl2Od"
-      },
-      "intent": "Iniciar",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "femlwB"
-          },
-          "activityProcessed": true,
-          "dialog": "Inicar"
-        }
-      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -226,6 +175,74 @@
           },
           "activityProcessed": true,
           "dialog": "Menu"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "VhGMrR"
+      },
+      "intent": "Iniciar",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "b5xE4O"
+          },
+          "activityProcessed": true,
+          "dialog": "Iniciar"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "ykde11"
+      },
+      "intent": "ViewVideo",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "fj5c9P"
+          },
+          "activityProcessed": true,
+          "dialog": "ViewVideo"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "qk0uyh"
+      },
+      "intent": "viewSurveyResult",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "lAtLHQ"
+          },
+          "activityProcessed": true,
+          "dialog": "viewSurveyResult"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Cyrlpp"
+      },
+      "intent": "cancelAssistant",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "lFQ9yk"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelAssistant"
         }
       ]
     }

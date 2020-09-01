@@ -20,6 +20,13 @@
             "id": "tG2jkC"
           },
           "activity": "${SendActivity_tG2jkC()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "AKxIfK"
+          },
+          "activityProcessed": true
         }
       ],
       "runOnce": false
@@ -38,7 +45,24 @@
           "activity": "${SendActivity_RaV1CR()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "h5ayjr"
+      },
+      "intent": "Otro",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8GWHNw"
+          },
+          "activity": "${SendActivity_8GWHNw()}"
+        }
+      ]
     }
   ],
-  "generator": "Menu.lg"
+  "generator": "Menu.lg",
+  "recognizer": "Menu.lu"
 }

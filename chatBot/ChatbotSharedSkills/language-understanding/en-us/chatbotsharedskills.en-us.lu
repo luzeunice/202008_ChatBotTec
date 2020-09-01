@@ -85,18 +85,6 @@
 > entity definitions:
 $ userNomina: /(L(\d{8}))|l(\d{8})/ 
 $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
-# UserProfile
-- empezar
-- Mi nomina es L00818965
-- Mi nomina es L01732945
-- La nomina es L08825013
-- Para que me guardes la nomina es L00473914
-- Mi nómina es L00418304
-- L00912304
-- Es L00812304
-- Soy la nómina L00516409
-- Soy L00818361
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
 > !# @app.culture = es-mx
 
 # updateRecord
@@ -110,34 +98,6 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 > entity definitions:
 > @ ml city
 $ userNomina: /(L(\d{8}))|l(\d{8})/ 
-# ViewDates
-- Me puedes mostrar la agenda pro favor?
-- Me puestras la agenda, por favor?
-- Sabes cuándo son las siguientes sesiones?
-- Me muestras cuándo son las sesiones proximas por fa?
-- Muesta fechas de sesiones sesiones siguientes
-- Sabes cuándo son las pláticas que siguen?
-- A ver las fechas de las siguientes sesiones
-- Fechas de proximos share skills
-
-
-# Iniciar
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
-- Iniciar 
-- Registrarte
-- Nuevo
-- Hola
--¿Como estas?
-- ¿Cómo estas?
-- Hola, buen día!
-- Buen día!
-- Hi
-- LogIn
-> entity definitions:
-> @ ml city
-
 # Cancelar
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -175,3 +135,56 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 > entity definitions:
 @ ml identificador
 @ prebuilt email correo
+
+# Iniciar
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Iniciar 
+- Registrarte
+- Nuevo
+- Hola
+- Nuevo
+-¿Como estas?
+- ¿Cómo estas?
+- Hola, buen día!
+- Buen día!
+- Hi
+- LogIn
+> entity definitions:
+> @ ml city
+
+
+# ViewVideo
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Video
+- Videos
+- Videos de SS anteriores
+- Quiero ver videos 
+- Sesiones Anteriores
+> entity definitions:
+> @ ml city
+
+
+# viewSurveyResult
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Resultados encuenstas
+- Encuestas de Salida
+> entity definitions:
+> @ ml city
+
+
+# cancelAssistant
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- 6- Cancelar la participación a un Share Skill
+- Cancelar la participación a un Share Skill
+- 6- Cancelar asistencia a un Share Skill
+- Cancelar asistencia a un Share Skill
+> entity definitions:
+> @ ml city
