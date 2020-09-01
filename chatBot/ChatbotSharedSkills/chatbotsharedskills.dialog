@@ -132,8 +132,7 @@
             }
           ]
         }
-      ],
-      "condition": "#AddSession.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -150,8 +149,7 @@
           "activityProcessed": true,
           "dialog": "ViewSessions"
         }
-      ],
-      "condition": "#ViewSessions.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -220,8 +218,7 @@
             }
           ]
         }
-      ],
-      "condition": "#Registration.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnUnknownIntent",
@@ -268,8 +265,7 @@
           },
           "activityProcessed": true
         }
-      ],
-      "condition": "#Cancelar.Scrore>=0.9"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -286,8 +282,7 @@
           "activityProcessed": true,
           "dialog": "Menu"
         }
-      ],
-      "condition": "#Menu.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -304,8 +299,7 @@
           "activityProcessed": true,
           "dialog": "Iniciar"
         }
-      ],
-      "condition": "#Iniciar.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -322,8 +316,7 @@
           "activityProcessed": true,
           "dialog": "ViewVideo"
         }
-      ],
-      "condition": "#ViewVideo.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -340,8 +333,7 @@
           "activityProcessed": true,
           "dialog": "viewSurveyResult"
         }
-      ],
-      "condition": "#viewSurveyResult.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -410,8 +402,7 @@
             }
           ]
         }
-      ],
-      "condition": "#cancelAssistant.Scrore>=0.8"
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -480,8 +471,7 @@
             }
           ]
         }
-      ],
-      "condition": "#addComments.Scrore>=0.8"
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

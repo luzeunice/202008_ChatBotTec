@@ -144,6 +144,8 @@ $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/
 - Soy L00818361
 - Mi correo electrónico es ejemplo@itesm.mx
 - Mi e-mail es jose@tec.mx
+- mi correo es ejemplo@itesm.mx
+- mi correo es este: jorge@tec.mx
 > entity definitions:
 $ userNomina: /(L(\d{8}))|l(\d{8})/ 
 $ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
