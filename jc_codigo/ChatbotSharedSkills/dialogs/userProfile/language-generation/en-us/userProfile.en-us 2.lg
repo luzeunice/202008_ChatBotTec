@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# TextInput_Prompt_Jn4gvY()
+- ¿Me podrías decir tu nómina?
+- ¿Cuál es tu nómina?
+
+# SendActivity_OVTEgK()
+- Listo, tu nomina se guardó como **${user.nomina}**

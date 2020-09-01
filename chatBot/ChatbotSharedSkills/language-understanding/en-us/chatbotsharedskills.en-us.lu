@@ -1,4 +1,5 @@
 
+> !# @app.culture = es-mx
 # AddSession
 - Necesito añadir una sesión 
 - Quiero añadir una sesión
@@ -22,6 +23,11 @@
 - Quiero dar un share skills
 - Quiero agendar un nuevo share skills
 - Impartir un Share Skills
+- Quiero impartir una sesión con la nómina L00818965
+- Quiero dar un share skills
+- Quiero impartir un SS
+- Quiero dar una plática de share skills
+- Quiero dar una sesión de SS
 > entity definitions
 @ ml sessionTitle
 > phrase list definitions
@@ -34,6 +40,7 @@
 	- agrega
 	- agenda
 	- agendar
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
 
 
 # ViewSessions
@@ -83,23 +90,16 @@
 - Inscribeme a un share skills
 - Participar en un share skills
 - Participar en un Share Skills
-
+- me inscribes a una sesion?
+- Me inscribes a un share skills?
+- Quiero registrarme a un share skills
+- me puedes registrar a un share skills?
+- me puedes registrar a una plática?
 > entity definitions:
 $ userNomina: /(L(\d{8}))|l(\d{8})/ 
 $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
-> !# @app.culture = es-mx
 
-# updateRecord
-> add some example phrases to trigger this intent:
-- Me puedo quitar de la reunión
-- Ya no quiero ir a la reunión
-- No quiero estar en la reunión por favor 
-- Desinscribeme de la reunión
-- Quitar registro de reunión
 
-> entity definitions:
-> @ ml city
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
 # Cancelar
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -117,27 +117,6 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 > @ ml city
 
 
-# TextInput_Response_FU09Bh
-> add some expected user responses:
-- Mi nomina es {@identificador = L01234560}
-- La nomina es {@identificador  = L04567894}
--{@identificador = L04566674}
-
-- Mi correo es {@identificador}
-- Mi correo es el {@identificador}
-- El correo es {@identificador}
-
-
-- Mi e-mail es {@identificador}
-- Mi e-mail es el {@identificador}
-- El e-mail es {@identificador}
-
-
-
-> entity definitions:
-@ ml identificador
-@ prebuilt email correo
-
 # Iniciar
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -153,11 +132,21 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 - Buen día!
 - Hi
 - LogIn
-- Mi nomina es
-- Mi correo electrónico es 
-- Mi e-mail es 
+- empezar
+- Mi nomina es L00818965
+- Mi nomina es L01732945
+- La nomina es L08825013
+- Para que me guardes la nomina es L00473914
+- Mi nómina es L00418304
+- L00912304
+- Es L00812304
+- Soy la nómina L00516409
+- Soy L00818361
+- Mi correo electrónico es ejemplo@itesm.mx
+- Mi e-mail es jose@tec.mx
 > entity definitions:
-> @ ml city
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
+$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
 
 
 # ViewVideo
@@ -184,20 +173,22 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 
 
 # cancelAssistant
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
 - 6- Cancelar la participación a un Share Skill
 - Cancelar la participación a un Share Skill
 - 6- Cancelar asistencia a un Share Skill
 - Cancelar asistencia a un Share Skill
+- Me puedo quitar de la reunión
+- Ya no quiero ir a la reunión
+- No quiero estar en la reunión por favor 
+- Desinscribeme de la reunión
+- Quitar registro de reunión
+
 > entity definitions:
-> @ ml city
+$ userNomina: /(L(\d{8}))|l(\d{8})/ 
+
 
 # addComments
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
+
 - Dejanos tus comentarios
 - Quejas 
 - Otros

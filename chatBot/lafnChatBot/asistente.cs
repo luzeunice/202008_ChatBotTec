@@ -73,7 +73,7 @@ namespace Company.Function
                         Mode = RetryMode.Exponential
                     }
                 };
-                DateTime fechaSesion=DateTime.ParseExact(fechaTemp.ToString("yyyy-MM-dd")+" "+"12:00", "yyyy-MM-dd HH:mm", null).ToUniversalTime();
+                DateTime fechaSesion=DateTime.ParseExact(fechaTemp.ToString("yyyy-MM-dd")+" "+"17:00", "yyyy-MM-dd HH:mm", null).ToUniversalTime();
                 var client = new SecretClient(new Uri("https://kevaultchatbot.vault.azure.net/"), new DefaultAzureCredential(),options);
                 KeyVaultSecret secret = client.GetSecret("storageTablas");
                 string secretValue = secret.Value;
@@ -113,6 +113,7 @@ namespace Company.Function
                 else{
                     log.LogInformation(fechaSesion.ToString());
                     log.LogInformation(sesion.Count.ToString());
+                    log.LogInformation(nomina);
                     return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="NoNominaOSesion"}));
                 }
                 
