@@ -38,35 +38,11 @@
           "invalidPrompt": "${DateTimeInput_InvalidPrompt_IdhZZs()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "4Z52OQ"
-          },
-          "activity": "${SendActivity_4Z52OQ()}"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "0zhYUZ"
-          },
-          "condition": "user.nombre==null",
-          "actions": [
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "bKSgTW"
-              },
-              "property": "user.nombre",
-              "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)"
-            }
-          ]
-        },
-        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "7XvNmz"
           },
-          "condition": "user.nombre!=null && dialog.fechaDeEvento!=null",
+          "condition": "user.nomina!=null && dialog.fechaDeEvento!=null",
           "actions": [
             {
               "$kind": "Microsoft.HttpRequest",

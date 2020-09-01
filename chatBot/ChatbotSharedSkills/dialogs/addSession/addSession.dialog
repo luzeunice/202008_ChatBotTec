@@ -58,34 +58,9 @@
           "alwaysPrompt": false,
           "allowInterruptions": false,
           "prompt": "${DateTimeInput_Prompt_uLj44B()}",
-          "outputFormat": "trim(formatDateTime(this.value[0][\"Timex\"], 'yyyy-MM-dd'))",
+          "outputFormat": "this.value[0][\"Timex\"]",
           "property": "dialog.fecha",
           "invalidPrompt": "${DateTimeInput_InvalidPrompt_uLj44B()}"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "9tVLbn"
-          },
-          "condition": "user.nombre==null || user.nombre=='Sin Datos'",
-          "actions": [
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "pHb7BP"
-              },
-              "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)",
-              "property": "user.nombre"
-            }
-          ]
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "jwWoFp"
-          },
-          "activityProcessed": true,
-          "dialog": "Iniciar"
         },
         {
           "$kind": "Microsoft.HttpRequest",

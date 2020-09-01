@@ -135,6 +135,15 @@
                 }
               ]
             }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "JvWidX"
+              },
+              "activity": "${SendActivity_JvWidX()}"
+            }
           ]
         }
       ]

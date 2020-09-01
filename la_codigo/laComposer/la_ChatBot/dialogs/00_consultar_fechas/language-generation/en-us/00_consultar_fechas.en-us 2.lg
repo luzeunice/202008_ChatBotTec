@@ -1,0 +1,33 @@
+[import](common.lg)
+
+
+
+
+#ErrorConsultaTitulos
+- Lo siento tenemos inconvenientes. Contacta al administrador: anantonieta@tec.mx
+
+#BuscandoFechas
+- Buscando las siguientes fechas...
+
+# ResultadoSigFechas
+- ``` Las próximas fechas de Share Skills son: 
+
+${dialog.api_response.content.resultado1.fecha_evento} 
+${dialog.api_response.content.resultado2.fecha_evento} 
+${dialog.api_response.content.resultado3.fecha_evento}
+
+```
+
+
+
+
+# SendActivity_zOd6NB()
+- ${ResultadoSigFechas()}
+
+
+
+
+# SendActivity_lJ0767()
+- ${BuscandoFechas()}
+# SendActivity_HtazPu()
+- ${ErrorConsultaTitulos()}

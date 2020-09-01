@@ -238,13 +238,6 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "XdMbei"
-      },
-      "intent": "updateRecord"
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "bA7j5L"
       },
       "intent": "Cancelar",

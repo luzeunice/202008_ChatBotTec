@@ -55,6 +55,14 @@
               ]
             },
             {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "cKFHrZ"
+              },
+              "property": "user.identificador",
+              "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)"
+            },
+            {
               "$kind": "Microsoft.TextInput",
               "$designer": {
                 "id": "fUUtIT"
@@ -64,7 +72,11 @@
               "alwaysPrompt": false,
               "allowInterruptions": false,
               "prompt": "${TextInput_Prompt_fUUtIT()}",
-              "property": "user.identificador"
+              "property": "user.identificador",
+              "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
+              "validations": [
+                "@userNomina!=null || @correo!=null"
+              ]
             },
             {
               "$kind": "Microsoft.HttpRequest",
@@ -191,5 +203,6 @@
       "runOnce": false
     }
   ],
-  "generator": "Iniciar.lg"
+  "generator": "Iniciar.lg",
+  "recognizer": "Iniciar.lu"
 }

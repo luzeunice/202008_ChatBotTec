@@ -1,0 +1,29 @@
+[import](common.lg)
+
+#MenuPrincipal
+- ¿Sobre qué deseas saber más?
+
+# PedirNomina()
+-Escribe tu "nomina o correo" para mostrarte informacion personalizada
+
+# NominaExistente()
+- Bienvenid@ ${dialog.api_response.content.resultado.nombre}
+
+#NominaNoExiste()
+- ```Lo siento tu nómina no esta registrada:
+- Contacta al administrador: anantonieta@tec.mx
+- Intenta nuevamente 
+```
+#ErrorConsultaUsuario()
+- Lo siento tenemos inconvenientes. Contacta al administrador: anantonieta@tec.mx
+
+
+
+# TextInput_Prompt_QhgORP()
+- ${PedirNomina()}
+# SendActivity_uOI8Mn()
+- ${NominaNoExiste()}
+# SendActivity_q30x6w()
+- ${NominaExistente()}
+# SendActivity_QLhaZm()
+- ${ErrorConsultaUsuario()}
