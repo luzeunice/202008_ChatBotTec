@@ -49,6 +49,8 @@
 - Ver sesiones
 - Fechas de proximos share skills
 - Ver próximos share skills
+- 1- Fechas de próximos Share Skills
+- Fechas de próximos Share Skills
 
 # Registration
 > add some example phrases to trigger this intent:
@@ -127,5 +129,49 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 - Registrarte
 - Nuevo
 - Hola
+-¿Como estas?
+- ¿Cómo estas?
+- Hola, buen día!
+- Buen día!
+- Hi
+- LogIn
 > entity definitions:
 > @ ml city
+
+# Cancelar
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+- Cancelar
+> entity definitions:
+> @ ml city
+
+# Menu
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+-Menu
+> entity definitions:
+> @ ml city
+
+
+# TextInput_Response_FU09Bh
+> add some expected user responses:
+- Mi nomina es {@identificador = L01234560}
+- La nomina es {@identificador  = L04567894}
+-{@identificador = L04566674}
+
+- Mi correo es {@identificador}
+- Mi correo es el {@identificador}
+- El correo es {@identificador}
+
+
+- Mi e-mail es {@identificador}
+- Mi e-mail es el {@identificador}
+- El e-mail es {@identificador}
+
+
+
+> entity definitions:
+@ ml identificador
+@ prebuilt email correo

@@ -1,0 +1,51 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "cR76x4",
+    "name": "Menu"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "3UNjdY"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "dhD9en"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_dhD9en()}",
+          "choiceOptions": {
+            "includeNumbers": false,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "choices": [
+            "1- Fechas de próximos Share Skills",
+            "2- Títulos de próximos Share Skills ",
+            "3- Videos de SS anteriores",
+            "4- Respuesta de encuestas de salida",
+            "5- Impartir un Share Skills",
+            "6-  Participar en un Share Skills",
+            "7- Comentarios/Otros"
+          ],
+          "style": "heroCard",
+          "property": "user.style"
+        }
+      ]
+    }
+  ],
+  "generator": "Menu.lg"
+}

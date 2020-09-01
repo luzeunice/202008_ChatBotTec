@@ -15,9 +15,5 @@ ${dialog.api_response.content.resultado3.fecha_evento}
 
 ```
 
-# SendActivity_dOTyhh()
-- ${BuscandoFechas()}
-# SendActivity_YWrHXz()
-- ${ResultadoSigFechas()}
-# SendActivity_TpBSlG()
-- ${ErrorConsultaTitulos()}
+
+

@@ -1,4 +1,17 @@
 [import](common.lg)
 
-# SendActivity_KK3Kse()
-- Inicar
+
+# TextInput_Prompt_sHL6Pc()
+- ¿Cuál es tu nómina o correo elentrónico?
+
+# SendActivity_5Pz24g()
+- Contactar al administrador : *anantonieta@tec.mx*
+# SendActivity_RvEVgX()
+- Nomina no registrada Intentalo Nuevamente
+# SendActivity_X2fuLA()
+- Bienvenid@ ${dialog.api_response.content.resultado.nombre}
+
+# SendActivity_JakSbM()
+- Contactar al administrador : *anantonieta@tec.mx*
+# SendActivity_Rf0PGL()
+- Intentalo Nuevamente

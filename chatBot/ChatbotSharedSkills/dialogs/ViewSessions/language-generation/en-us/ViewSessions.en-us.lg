@@ -1,0 +1,17 @@
+[import](common.lg)
+
+# SendActivity_pkrzzY()
+- Buscando titulos
+
+# SendActivity_90V0L8()
+- Error
+
+
+
+
+# SendActivity_OMSVM3()
+- ``` Las fechas son: 
+- ${dialog.api_response.content.resultado1.fecha}
+- ${dialog.api_response.content.resultado2.fecha}
+- ${dialog.api_response.content.resultado2.fecha}
+```

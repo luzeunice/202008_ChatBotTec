@@ -2,7 +2,7 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "id": "ESdg05",
-    "name": "consultarFechas"
+    "name": "viewSession"
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
@@ -15,49 +15,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "dOTyhh"
+            "id": "z6lgyD"
           },
-          "activity": "${SendActivity_dOTyhh()}"
-        },
-        {
-          "$kind": "Microsoft.HttpRequest",
-          "$designer": {
-            "id": "WwmvO7"
-          },
-          "method": "GET",
-          "url": "https://la-fn-app.azurewebsites.net/api/sesion?code=maEnfmz/YCmNawA/tRseJUY7oL3h6DPGG4Nyeo7h4TaWk7DkuoahMQ==",
-          "responseType": "json",
-          "body": {
-            "identificador": "${user.nombre}"
-          },
-          "resultProperty": "dialog.api_response"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "Y6baMJ"
-          },
-          "actions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "YWrHXz"
-              },
-              "activity": "${SendActivity_YWrHXz()}"
-            }
-          ],
-          "condition": "dialog.api_response.statusCode==200",
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "TpBSlG"
-              },
-              "activity": "${SendActivity_TpBSlG()}"
-            }
-          ]
+          "activityProcessed": true,
+          "dialog": "ViewSessions"
         }
       ]
     }

@@ -75,7 +75,7 @@
             "id": "YFggHp"
           },
           "activityProcessed": true,
-          "dialog": "consultarFechas"
+          "dialog": "ViewSessions"
         }
       ]
     },
@@ -162,10 +162,50 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "hXMIuv"
+            "id": "femlwB"
           },
           "activityProcessed": true,
           "dialog": "Inicar"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "bA7j5L"
+      },
+      "intent": "Cancelar",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "JntGES"
+          },
+          "activity": "${SendActivity_JntGES()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "EsX8XS"
+          },
+          "activityProcessed": true
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "bVUs3G"
+      },
+      "intent": "Menu",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "YsCUWJ"
+          },
+          "activityProcessed": true,
+          "dialog": "Menu"
         }
       ]
     }
