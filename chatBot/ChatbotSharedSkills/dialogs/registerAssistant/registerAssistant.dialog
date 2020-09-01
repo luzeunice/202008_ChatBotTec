@@ -38,6 +38,13 @@
           "invalidPrompt": "${DateTimeInput_InvalidPrompt_IdhZZs()}"
         },
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "4Z52OQ"
+          },
+          "activity": "${SendActivity_4Z52OQ()}"
+        },
+        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "0zhYUZ"
@@ -53,14 +60,6 @@
               "value": "=coalesce(@userNomina, $userNomina, @correo,$correo)"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "M4dio4"
-          },
-          "activityProcessed": true,
-          "dialog": "userProfile"
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -81,7 +80,7 @@
               "contentType": "application/x-www-form-urlencoded",
               "body": {
                 "fecha": "${dialog.fechaDeEvento}",
-                "nomina": "${user.nombre}"
+                "nomina": "${user.nomina}"
               }
             },
             {

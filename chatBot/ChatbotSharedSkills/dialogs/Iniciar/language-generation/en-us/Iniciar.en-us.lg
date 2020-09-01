@@ -1,12 +1,12 @@
 [import](common.lg)
 
 # TextInput_Prompt_fUUtIT()
-- ¿Cuál es tu nómina o correo elentrónico?
+- ¿Cuál es tu **nómina o correo elentrónico** ?
 
 # SendActivity_o467XZ()
 - Contactar al administrador : *anantonieta@tec.mx*
 # SendActivity_BI4DlY()
-- Nomina no registrada Intentalo Nuevamente
+- Nómina/correo electrónico no registrado Intentalo Nuevamente
 # SendActivity_XZ5yJv()
 - Bienvenid@ ${dialog.api_response.content.resultado.nombre}
 
@@ -14,3 +14,4 @@
 - Contactar al administrador : *anantonieta@tec.mx*
 # SendActivity_typrNY()
 - Intentalo Nuevamente
+

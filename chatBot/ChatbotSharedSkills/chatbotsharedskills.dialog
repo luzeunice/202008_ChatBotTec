@@ -73,12 +73,64 @@
       "intent": "AddSession",
       "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "RFs44l"
+            "id": "AkD7PY"
           },
-          "activityProcessed": true,
-          "dialog": "addSession"
+          "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "6ugTvn"
+              },
+              "activity": "${SendActivity_6ugTvn()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "OJHvkr"
+              },
+              "activityProcessed": true,
+              "dialog": "Iniciar"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "hN3jRB"
+              },
+              "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "eZt2rZ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "addSession"
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "UgYX4T"
+                  },
+                  "activity": "${SendActivity_UgYX4T()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "vOtH6v"
+              },
+              "activityProcessed": true,
+              "dialog": "addSession"
+            }
+          ]
         }
       ]
     },
@@ -107,12 +159,64 @@
       "intent": "Registration",
       "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "vrMM1t"
+            "id": "Jod3Vx"
           },
-          "activityProcessed": true,
-          "dialog": "registerAssistant"
+          "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "If9kp6"
+              },
+              "activity": "${SendActivity_If9kp6()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "hvPXSR"
+              },
+              "activityProcessed": true,
+              "dialog": "Iniciar"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "mp3sxB"
+              },
+              "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "McD0x4"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "registerAssistant"
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "5cFXLc"
+                  },
+                  "activity": "${SendActivity_5cFXLc()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "P4SSXW"
+              },
+              "activityProcessed": true,
+              "dialog": "registerAssistant"
+            }
+          ]
         }
       ]
     },
@@ -237,12 +341,133 @@
       "intent": "cancelAssistant",
       "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "lFQ9yk"
+            "id": "yiSCj6"
           },
-          "activityProcessed": true,
-          "dialog": "CancelAssistant"
+          "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "x6k39t"
+              },
+              "activity": "${SendActivity_x6k39t()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "FGeAoJ"
+              },
+              "activityProcessed": true,
+              "dialog": "Iniciar"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "4gFw6m"
+              },
+              "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "2o8OwU"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "CancelAssistant"
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "IhYknm"
+                  },
+                  "activity": "${SendActivity_IhYknm()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "IFCK9A"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelAssistant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "CY8Kgz"
+      },
+      "intent": "addComments",
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "xwfZb5"
+          },
+          "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "mTI1x0"
+              },
+              "activity": "${SendActivity_mTI1x0()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "eJuCUb"
+              },
+              "activityProcessed": true,
+              "dialog": "Iniciar"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "Ifzr56"
+              },
+              "condition": "user.nombre == 'Sin Datos' || user.nombre == null",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "15c3T0"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "addComments"
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "PIE6uG"
+                  },
+                  "activity": "${SendActivity_PIE6uG()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "sUsJ41"
+              },
+              "activityProcessed": true,
+              "dialog": "addComments"
+            }
+          ]
         }
       ]
     }

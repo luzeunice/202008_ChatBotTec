@@ -67,7 +67,7 @@
           "$designer": {
             "id": "9tVLbn"
           },
-          "condition": "user.nombre==null",
+          "condition": "user.nombre==null || user.nombre=='Sin Datos'",
           "actions": [
             {
               "$kind": "Microsoft.SetProperty",
@@ -85,7 +85,7 @@
             "id": "jwWoFp"
           },
           "activityProcessed": true,
-          "dialog": "userProfile"
+          "dialog": "Iniciar"
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -98,7 +98,7 @@
             "titulo": "${dialog.sessionTitle}",
             "fecha": "${dialog.fecha}",
             "comentarios": "${dialog.comments}",
-            "nomina": "${user.nombre}"
+            "nomina": "${user.nomina}"
           },
           "contentType": "application/x-www-form-urlencoded",
           "resultProperty": "dialog.api_response",

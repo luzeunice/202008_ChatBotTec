@@ -31,3 +31,5 @@
 
 # DateTimeInput_InvalidPrompt_IdhZZs()
 - Disculpa, no te entendí, prueba ingresando la fecha con el formato MES/DIA/AÑO
+# SendActivity_4Z52OQ()
+- La nomina: ${user.nomina}
