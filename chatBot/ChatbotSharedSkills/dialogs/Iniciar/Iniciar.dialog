@@ -63,19 +63,46 @@
               "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)"
             },
             {
-              "$kind": "Microsoft.TextInput",
+              "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "fUUtIT"
+                "id": "ZFPKaY"
               },
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "prompt": "${TextInput_Prompt_fUUtIT()}",
-              "property": "user.identificador",
-              "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
-              "validations": [
-                "@userNomina!=null || @correo!=null"
+              "condition": "dialog.foreach.index==0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "UjxE9b"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${TextInput_Prompt_UjxE9b()}",
+                  "property": "user.identificador",
+                  "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
+                  "validations": [
+                    "@userNomina!=null || @correo!=null"
+                  ]
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "RFU2WN"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": false,
+                  "prompt": "${TextInput_Prompt_RFU2WN()}",
+                  "property": "user.identificador",
+                  "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
+                  "validations": [
+                    "@userNomina!=null || @correo!=null"
+                  ]
+                }
               ]
             },
             {

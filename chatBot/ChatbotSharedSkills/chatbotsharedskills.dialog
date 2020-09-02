@@ -221,30 +221,6 @@
       ]
     },
     {
-      "$kind": "Microsoft.OnUnknownIntent",
-      "$designer": {
-        "id": "BFRcQl"
-      },
-      "actions": [
-        {
-          "$kind": "Microsoft.QnAMakerDialog",
-          "$designer": {
-            "id": "5hWhTp"
-          },
-          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
-          "endpointKey": "=settings.qna.endpointkey",
-          "hostname": "=settings.qna.hostname",
-          "noAnswer": "${QnAMakerDialog_NoAnswer_5hWhTp()}",
-          "threshold": 0.8,
-          "activeLearningCardTitle": "Did you mean:",
-          "cardNoMatchText": "None of the above.",
-          "cardNoMatchResponse": "Thanks for the feedback.",
-          "top": 3,
-          "isTest": false
-        }
-      ]
-    },
-    {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
         "id": "bA7j5L"
@@ -470,6 +446,30 @@
               "dialog": "addComments"
             }
           ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "Ma3hmZ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "4RiwCL"
+          },
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "${QnAMakerDialog_NoAnswer_4RiwCL()}",
+          "threshold": 0.3,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false
         }
       ]
     }

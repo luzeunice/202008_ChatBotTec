@@ -1,7 +1,5 @@
 [import](common.lg)
 
-# TextInput_Prompt_fUUtIT()
-- ¿Cuál es tu **nómina o correo elentrónico** ?
 
 # SendActivity_o467XZ()
 - Contactar al administrador : *anantonieta@tec.mx*
@@ -15,3 +13,9 @@
 # SendActivity_typrNY()
 - Intentalo Nuevamente
 
+
+# TextInput_Prompt_UjxE9b()
+- ¿Cuál es tu **nómina o correo elentrónico** ?
+
+# TextInput_Prompt_RFU2WN()
+- ¿Cuál es tu **nómina o correo elentrónico** ?
