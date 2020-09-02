@@ -7,7 +7,7 @@
 - ``` Las fechas de los próximos eventos son las siguientes: 
 - ${dialog.api_response.content.resultado1.fecha_evento} : ${dialog.api_response.content.resultado1.titulo}
 - ${dialog.api_response.content.resultado2.fecha_evento} : ${dialog.api_response.content.resultado2.titulo}
-- ${dialog.api_response.content.resultado3.fecha_evento} : ${dialog.api_response.content.resultado1.titulo}
+- ${dialog.api_response.content.resultado3.fecha_evento} : ${dialog.api_response.content.resultado3.titulo}
 ```
 
 
