@@ -178,9 +178,17 @@ $ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
 - No quiero estar en la reunión por favor 
 - Desinscribeme de la reunión
 - Quitar registro de reunión
+- Cancelar la asistencia de userNomina el dia fechaDeEvento
+- Cancelar la asistencia de {@userNomina}
+- Cancelar la asistencia {@userNomina}
+- 6
+
 
 > entity definitions:
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
+>@ ml userNomina
+
+$userNomina: /(L(\d{8}))|l(\d{8})/ 
+$fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 
 
 # addComments
