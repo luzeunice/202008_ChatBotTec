@@ -1,5 +1,5 @@
 
-> !# @app.culture = en-us
+> !# @app.culture es-mx
 # TextInput_Response_fUUtIT
 - Mi nomina es {@userNomina = L01096586}
 - Mi nomina es {@userNomina = L01732945}
