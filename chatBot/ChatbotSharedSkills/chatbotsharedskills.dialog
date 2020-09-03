@@ -132,7 +132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#AddSession.Score >= 0.6 "
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -149,7 +150,8 @@
           "activityProcessed": true,
           "dialog": "ViewSessions"
         }
-      ]
+      ],
+      "condition": "#ViewSessions.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -218,7 +220,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#Registration.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -241,7 +244,8 @@
           },
           "activityProcessed": true
         }
-      ]
+      ],
+      "condition": "#Cancelar.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -258,7 +262,8 @@
           "activityProcessed": true,
           "dialog": "Menu"
         }
-      ]
+      ],
+      "condition": "#Menu.Score >=0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -275,7 +280,8 @@
           "activityProcessed": true,
           "dialog": "Iniciar"
         }
-      ]
+      ],
+      "condition": "#Iniciar.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -292,7 +298,8 @@
           "activityProcessed": true,
           "dialog": "ViewVideo"
         }
-      ]
+      ],
+      "condition": "#ViewVideo.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -309,7 +316,8 @@
           "activityProcessed": true,
           "dialog": "viewSurveyResult"
         }
-      ]
+      ],
+      "condition": " #viewSurveyResult.Score >=0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -378,7 +386,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#cancelAssistant.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -447,7 +456,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#addComments.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnUnknownIntent",
@@ -476,5 +486,6 @@
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
   "generator": "chatbotsharedskills.lg",
-  "recognizer": "chatbotsharedskills.lu"
+  "recognizer": "chatbotsharedskills.lu.qna",
+  "id": "chatbotsharedskills"
 }

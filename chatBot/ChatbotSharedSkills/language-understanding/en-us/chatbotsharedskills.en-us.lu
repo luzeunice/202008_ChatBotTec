@@ -1,18 +1,20 @@
 
 > !# @app.culture = es-mx
 # AddSession
+- 4
+- Impartir una Sesión
 - Necesito añadir una sesión 
 - Quiero añadir una sesión
-- Me gustaría dar una sesión de skills de Fundamentos de Azure
-- Quiero dar una plática de Fundamentos de Azure
-- Quiero agendar una sesión de Estadísticas con excel
-- Puedes poner una sesión de shared skills de principios de ciencia de datos
-- Agendar sesión de Manejo de datos personales
-- Pon una sesion para Cómo tener una comunicación efectiva
-- Quiero dar una platica de Uso de SQL
-- Quiero dar una sesion de historia de la musica
-- [Por favor] añade una sesión de Comunicacion Efectiva
-- [Sabes si puedo] dar una sesion de Desarrollos agiles
+- Me gustaría dar una sesión de  {@sessionTitle = skills de Fundamentos de Azure}
+- Quiero dar una plática de {@sessionTitle = Fundamentos de Azure}
+- Quiero agendar una sesión {@sessionTitle = Estadisticas con excel }
+- Puedes poner una sesión de {@sessionTitle =shared skills de principios de ciencia de datos}
+- Agendar sesión de  {@sessionTitle =Manejo de datos personales}
+- Pon una sesion para  {@sessionTitle =Como tener una comunicación efectiva}
+- Quiero dar una platica de {@sessionTitle =Uso de SQL}
+- Quiero dar una sesion de  {@sessionTitle =historia de la musica}
+- [Por favor] añade una sesión de  {@sessionTitle =Comunicacion Efectiva}
+- [Sabes si puedo] dar una sesion de  {@sessionTitle =Desarrollos agiles}
 - Nueva sesión
 - Nueva plática
 - Nueva sesion
@@ -23,11 +25,13 @@
 - Quiero dar un share skills
 - Quiero agendar un nuevo share skills
 - Impartir un Share Skills
-- Quiero impartir una sesión con la nómina L00818965
+- Quiero impartir una sesión con la nómina {@userNomina =L00818965}
 - Quiero dar un share skills
 - Quiero impartir un SS
 - Quiero dar una plática de share skills
 - Quiero dar una sesión de SS
+- Quiero impartir una sesión con el titulo {@sessionTitle = Nuevas Formas de trabajo}
+- Añadir Sesión
 > entity definitions
 @ ml sessionTitle
 > phrase list definitions
@@ -40,14 +44,14 @@
 	- agrega
 	- agenda
 	- agendar
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
-
-
+> $ userNomina: /(L(\d{8}))|l(\d{8})/ 
+@ ml userNomina 
 # ViewSessions
+- 1
 - Sabes cuáles son las siguientes sesiones?
 - Me muestras cuáles son las sesiones proximas por fa?
 - Muesta sesiones siguientes
-- Muestra las pláticas
+- Muestra fechas de las siguientes pláticas
 - Sabes cuáles son las pláticas que siguen?
 - Culales son los proximos share skills
 - Quiero ver las pláticas que se van a dar
@@ -60,20 +64,21 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 - Fechas de próximos Share Skills
 - Fechas y títulos de próximos Share Skills
 # Registration
-> add some example phrases to trigger this intent:
-- Por favor regístrame a la sesión del 12/10/2021 con la nómina L00818965
-- Por favor regístrame a la sesión del 25/12/2020
-- Me podrías registrar a la plática del 5/08/2022
-- Registrame en la share skills del 3-12-2021
-- registrar a la del 3/11/2020
-- Registrame en la del 14/10/2020
-- registrame en el share skills del 14-9-2024
-- Inscribeme en la del 10/5/2020
-- Ponme en la de 30/7/2020
-- Ponme en la del 28/2/2020
-- Inscribe a L00173927 a 1/2/2020
-- Me puedes poner en la sesión del 02/9/2020 con nómina L01492743
-- Me puedes meter a la platica del 3/4/2020 por fa
+- 5
+- Asistir a una sesion
+- Por favor regístrame a la sesión del {@fechaDeEvento=10/5/2020} con la nómina {@userNomina=L00173927}
+- Por favor regístrame a la sesión del {@fechaDeEvento=10/5/2020}
+- Me podrías registrar a la plática del {@fechaDeEvento=10/5/2020}
+- Registrame en la share skills del {@fechaDeEvento=10/5/2020}
+- registrar a la del {@fechaDeEvento=10/5/2020}
+- Registrame en la del {@fechaDeEvento=10/5/2020}
+- registrame en el share skills del {@fechaDeEvento=10/5/2020}
+- Inscribeme en la del {@fechaDeEvento=10/5/2020}
+- Ponme en la de {@fechaDeEvento=10/5/2020}
+- Ponme en la del {@fechaDeEvento=10/5/2020}
+- Inscribe a {@userNomina=L00173927} a {@fechaDeEvento=10/5/2020}
+- Me puedes poner en la sesión del {@fechaDeEvento=10/5/2020} con {@userNomina=L00173927}
+- Me puedes meter a la platica del {@fechaDeEvento=10/5/2020} por fa
 - Quiero registrarme a una sesión
 - Quiero registrarme en una plática
 - Registrarme en una sesión
@@ -95,11 +100,13 @@ $ userNomina: /(L(\d{8}))|l(\d{8})/
 - Quiero registrarme a un share skills
 - me puedes registrar a un share skills?
 - me puedes registrar a una plática?
+
 > entity definitions:
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
-$ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
+> $ userNomina: /(L(\d{8}))|l(\d{8})/ 
+> $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 
-
+@ ml userNomina 
+@ ml fechaDeEvento
 # Cancelar
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -107,7 +114,6 @@ $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/
 - Salir
 > entity definitions:
 > @ ml city
-
 # Menu
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -118,33 +124,29 @@ $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/
 
 
 # Iniciar
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
-- Iniciar 
-- Registrarte
-- Nuevo
-- Nuevo
+- 1
+- Iniciar
+- Iniciar
+- Registrarme
 - LogIn
-- empezar
-- Mi nomina es L00818965
-- Mi nomina es L01732945
-- La nomina es L08825013
-- Para que me guardes la nomina es L00473914
-- Mi nómina es L00418304
-- L00912304
-- Es L00812304
-- Soy la nómina L00516409
-- Soy L00818361
-- Mi correo electrónico es ejemplo@itesm.mx
-- Mi e-mail es jose@tec.mx
-- mi correo es ejemplo@itesm.mx
-- mi correo es este: jorge@tec.mx
+
+
+- Mi nomina es {@userNomina = L01096586}
+- Mi nomina es {@userNomina = L01732945}
+- La nomina es {@userNomina = L01732945}
+- Para que me guardes la nomina es {@userNomina = L01732945}
+- Mi nómina es {@userNomina = L01732945}
+- {@userNomina = L01096586}
+
+- Mi email es {@userCorreo = luzeunice@tec.mx}
+- Mi emial es el {@userCorreo = luzeunice@tec.mx}
+- El emial es {@userCorreo =luzeunice@tec.mx}
+- {@userCorreo=luzeunice@tec.mx}
+
 > entity definitions:
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
-$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
-
-
+@ ml userNomina 
+@ ml userCorreo 
+@ prebuilt  email correo
 # ViewVideo
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -153,10 +155,9 @@ $ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
 - Videos
 - Videos de SS anteriores
 - Quiero ver videos 
-- Sesiones Anteriores
+- 2
 > entity definitions:
 > @ ml city
-
 
 # viewSurveyResult
 > add some example phrases to trigger this intent:
@@ -164,38 +165,41 @@ $ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
 > - what is the weather like in {city=Seattle}
 - Resultados encuenstas
 - Encuestas de Salida
+- 3 
+- Encuestas
+- Resultados de encuesta
+
 > entity definitions:
 > @ ml city
 
-
 # cancelAssistant
-- 6- Cancelar la participación a un Share Skill
+- 6
 - Cancelar la participación a un Share Skill
-- 6- Cancelar asistencia a un Share Skill
+- 6 - Cancelar asistencia a un Share Skill
 - Cancelar asistencia a un Share Skill
 - Me puedo quitar de la reunión
 - Ya no quiero ir a la reunión
 - No quiero estar en la reunión por favor 
 - Desinscribeme de la reunión
 - Quitar registro de reunión
-- Cancelar la asistencia de userNomina el dia fechaDeEvento
-- Cancelar la asistencia de {@userNomina}
-- Cancelar la asistencia {@userNomina}
-- 6
+- Cancelar la asistencia de { @userNomina = L01096586} el dia {@fechaDeEvento = 2020-01-01}
+- Cancelar la asistencia de {@userNomina= L01096586}
+- Cancelar la asistencia {@userNomina = L01096586}
+- Cancelar asistencia
+
 
 
 > entity definitions:
 >@ ml userNomina
 
-$userNomina: /(L(\d{8}))|l(\d{8})/ 
-$fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
-
+@ ml userNomina 
+@ ml fechaDeEvento 
+> $userNomina: /(L(\d{8}))|l(\d{8})/ 
+> $fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 
 # addComments
-
+- 7
 - Dejanos tus comentarios
 - Quejas 
 - Otros
 - Comentarios
-> entity definitions:
-> @ ml city

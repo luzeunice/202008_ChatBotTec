@@ -55,14 +55,6 @@
               ]
             },
             {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "cKFHrZ"
-              },
-              "property": "user.identificador",
-              "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)"
-            },
-            {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
                 "id": "ZFPKaY"
@@ -80,7 +72,7 @@
                   "allowInterruptions": false,
                   "prompt": "${TextInput_Prompt_UjxE9b()}",
                   "property": "user.identificador",
-                  "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
+                  "value": "=coalesce(@userNomina, @correo)",
                   "validations": [
                     "@userNomina!=null || @correo!=null"
                   ]
@@ -98,7 +90,7 @@
                   "allowInterruptions": false,
                   "prompt": "${TextInput_Prompt_RFU2WN()}",
                   "property": "user.identificador",
-                  "value": "=coalesce(@userNomina, $userNomina, @correo, $correo)",
+                  "value": "=coalesce(@userNomina, @correo)",
                   "validations": [
                     "@userNomina!=null || @correo!=null"
                   ]
@@ -231,5 +223,6 @@
     }
   ],
   "generator": "Iniciar.lg",
-  "recognizer": "Iniciar.lu"
+  "recognizer": "Iniciar.lu.qna",
+  "id": "Iniciar"
 }

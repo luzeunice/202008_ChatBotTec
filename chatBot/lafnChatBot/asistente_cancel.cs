@@ -154,7 +154,7 @@ namespace laasistentes_cancel
                     else
                     {
                         List<Sesion> sesion_orden = sesion.OrderBy(c => c.fecha_evento).ToList();
-                        List<Asistente> asistente = tableAsistente.CreateQuery<Asistente>().AsQueryable<Asistente>().Where(e => e.PartitionKey == "0" && e.idSesion == sesion_orden[0].idSesion && e.nomina_asistente == usuario[0].nomina).ToList();
+                        List<Asistente> asistente = tableAsistente.CreateQuery<Asistente>().AsQueryable<Asistente>().Where(e =>  e.idSesion == sesion_orden[0].idSesion && e.nomina_asistente == usuario[0].nomina).ToList();
 
                         if (asistente == null || asistente.Count() == 0)
                         {

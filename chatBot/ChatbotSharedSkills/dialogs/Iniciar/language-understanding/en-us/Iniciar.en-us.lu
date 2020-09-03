@@ -1,68 +1,39 @@
 
 > !# @app.culture = es-mx
 # TextInput_Response_UjxE9b
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
-- Iniciar 
-- Registrarte
-- Nuevo
-- Hola
-- Nuevo
--¿Como estas?
-- ¿Cómo estas?
-- Hola, buen día!
-- Buen día!
-- Hi
-- LogIn
-- empezar
-- Mi nomina es L00818965
-- Mi nomina es L01732945
-- La nomina es L08825013
-- Para que me guardes la nomina es L00473914
-- Mi nómina es L00418304
-- L00912304
-- Es L00812304
-- Soy la nómina L00516409
-- Soy L00818361
-- Mi correo electrónico es ejemplo@itesm.mx
-- Mi e-mail es jose@tec.mx
+- Mi nomina es {@userNomina = L01096586}
+- Mi nomina es {@userNomina = L01732945}
+- La nomina es {@userNomina = L01732945}
+- Para que me guardes la nomina es {@userNomina = L01732945}
+- Mi nómina es {@userNomina = L01732945}
+- {@userNomina = L01096586}
+
+- Mi email es {@userCorreo = luzeunice@tec.mx}
+- Mi emial es el {@userCorreo = luzeunice@tec.mx}
+- El emial es {@userCorreo =luzeunice@tec.mx}
+- {@userCorreo=luzeunice@tec.mx}
+
 > entity definitions:
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
-$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
+@ ml userNomina 
+@ ml userCorreo 
+@ prebuilt  email correo
 
 
 
 
 # TextInput_Response_RFU2WN
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
-- Iniciar 
-- Registrarte
-- Nuevo
-- Hola
-- Nuevo
--¿Como estas?
-- ¿Cómo estas?
-- Hola, buen día!
-- Buen día!
-- Hi
-- LogIn
-- empezar
-- Mi nomina es L00818965
-- Mi nomina es L01732945
-- La nomina es L08825013
-- Para que me guardes la nomina es L00473914
-- Mi nómina es L00418304
-- L00912304
-- Es L00812304
-- Soy la nómina L00516409
-- Soy L00818361
-- Mi correo electrónico es ejemplo@itesm.mx
-- Mi e-mail es jose@tec.mx
+- Mi nomina es {@userNomina = L01096586}
+- Mi nomina es {@userNomina = L01732945}
+- La nomina es {@userNomina = L01732945}
+- Para que me guardes la nomina es {@userNomina = L01732945}
+- Mi nómina es {@userNomina = L01732945}
+- {@userNomina = L01096586}
+
+- Mi email es {@userCorreo = luzeunice@tec.mx}
+- Mi emial es el {@userCorreo = luzeunice@tec.mx}
+- El emial es {@userCorreo =luzeunice@tec.mx}
+- {@userCorreo=luzeunice@tec.mx}
+
 > entity definitions:
-$ userNomina: /(L(\d{8}))|l(\d{8})/ 
-$ correo:/[\w-\.]+@(tec\.mx|itesm\.mx)/
-
-
+@ ml userNomina 
+@ ml userCorreo 
