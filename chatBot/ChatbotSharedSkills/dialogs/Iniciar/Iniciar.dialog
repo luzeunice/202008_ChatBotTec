@@ -72,10 +72,8 @@
                   "allowInterruptions": false,
                   "prompt": "${TextInput_Prompt_UjxE9b()}",
                   "property": "user.identificador",
-                  "value": "=coalesce(@userNomina, @correo)",
-                  "validations": [
-                    "@userNomina!=null || @correo!=null"
-                  ]
+                  "value": "=coalesce(@userNomina, @userCorreo)",
+                  "validations": []
                 }
               ],
               "elseActions": [
@@ -90,10 +88,8 @@
                   "allowInterruptions": false,
                   "prompt": "${TextInput_Prompt_RFU2WN()}",
                   "property": "user.identificador",
-                  "value": "=coalesce(@userNomina, @correo)",
-                  "validations": [
-                    "@userNomina!=null || @correo!=null"
-                  ]
+                  "value": "=coalesce(@userNomina, @userCorreo)",
+                  "validations": []
                 }
               ]
             },
