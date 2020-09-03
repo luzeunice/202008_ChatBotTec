@@ -20,49 +20,12 @@
             "id": "tG2jkC"
           },
           "activity": "${SendActivity_tG2jkC()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "AKxIfK"
-          },
-          "activityProcessed": true
         }
       ],
       "runOnce": false
-    },
-    {
-      "$kind": "Microsoft.OnUnknownIntent",
-      "$designer": {
-        "id": "M4i2UV"
-      },
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "RaV1CR"
-          },
-          "activity": "${SendActivity_RaV1CR()}"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "h5ayjr"
-      },
-      "intent": "Otro",
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "8GWHNw"
-          },
-          "activity": "${SendActivity_8GWHNw()}"
-        }
-      ]
     }
   ],
   "generator": "Menu.lg",
-  "recognizer": "Menu.lu"
+  "recognizer": "Menu.lu.qna",
+  "id": "Menu"
 }

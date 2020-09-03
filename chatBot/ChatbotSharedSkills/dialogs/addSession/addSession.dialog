@@ -125,5 +125,6 @@
       ]
     }
   ],
-  "generator": "addSession.lg"
+  "generator": "addSession.lg",
+  "id": "addSession"
 }

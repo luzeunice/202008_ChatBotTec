@@ -1,16 +1,1 @@
 
-> !# @app.culture = es-mx
-# DateTimeInput_Response_FUgz5X
-- Por favor regístrame a la sesión del 12/10/2020 con la nómina L00818965
-- Por favor regístrame a la sesión del 25/12/2020
-- Me podrías registrar a la plática del 5-08-2020
-- registrar a la del 3/11/2020
-- Registrame en la del 14/10/2020
-- Inscribeme en la del 10-5-2020
-- Ponme en la de 30/7/2020
-- Ponme en la del 28.2.2020
-- Inscribe a L00173927 a 1/2/2020
-- Me puedes poner en la sesión del 02/9/2020 con nómina L01492743
-- Me puedes meter a la platica del 3/4/2020 por fa
-> entity definitions:
-$ userNomina: /(L(\d{8}))|(l(\d{8}))/ 

@@ -1,9 +1,2 @@
-
-> !# @app.culture = es-mx
-# Otro
-> add some example phrases to trigger this intent:
-> - please tell me the weather
-> - what is the weather like in {city=Seattle}
-- Otro
-> entity definitions:
-> @ ml city
+> To learn more about the LU file format, read the documentation at
+> https://aka.ms/lu-file-format

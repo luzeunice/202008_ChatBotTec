@@ -149,5 +149,6 @@
       ]
     }
   ],
-  "generator": "CancelAssistant.lg"
+  "generator": "CancelAssistant.lg",
+  "id": "CancelAssistant"
 }

@@ -171,5 +171,6 @@
     }
   ],
   "generator": "registerAssistant.lg",
-  "recognizer": "registerAssistant.lu"
+  "recognizer": "registerAssistant.lu.qna",
+  "id": "registerAssistant"
 }

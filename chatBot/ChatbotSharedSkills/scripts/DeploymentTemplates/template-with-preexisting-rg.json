@@ -129,7 +129,7 @@
     },
     "luisServiceLocation": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]"
+      "defaultValue": "WestUS"
     }
   },
   "variables": {

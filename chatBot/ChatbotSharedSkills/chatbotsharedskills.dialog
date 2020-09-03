@@ -132,7 +132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#AddSession.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -149,7 +150,8 @@
           "activityProcessed": true,
           "dialog": "ViewSessions"
         }
-      ]
+      ],
+      "condition": "#ViewSessions.Score >=0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -218,7 +220,8 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#Registration.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnUnknownIntent",
@@ -229,18 +232,18 @@
         {
           "$kind": "Microsoft.QnAMakerDialog",
           "$designer": {
-            "id": "5hWhTp"
+            "id": "5yDwmF",
+            "name": "Connect to QnA Knowledgebase"
           },
           "knowledgeBaseId": "=settings.qna.knowledgebaseid",
           "endpointKey": "=settings.qna.endpointkey",
           "hostname": "=settings.qna.hostname",
-          "noAnswer": "${QnAMakerDialog_NoAnswer_5hWhTp()}",
-          "threshold": 0.8,
+          "noAnswer": "${QnAMakerDialog_NoAnswer_5yDwmF()}",
+          "threshold": 0.6,
           "activeLearningCardTitle": "Did you mean:",
           "cardNoMatchText": "None of the above.",
-          "cardNoMatchResponse": "Thanks for the feedback.",
-          "top": 3,
-          "isTest": false
+          "cardNoMatchResponse": "${QnAMakerDialog_CardNoMatchResponse_5yDwmF()}",
+          "top": 3
         }
       ]
     },
@@ -265,7 +268,8 @@
           },
           "activityProcessed": true
         }
-      ]
+      ],
+      "condition": "#Cancelar.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -282,7 +286,8 @@
           "activityProcessed": true,
           "dialog": "Menu"
         }
-      ]
+      ],
+      "condition": "#Menu.Score >=0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -299,7 +304,8 @@
           "activityProcessed": true,
           "dialog": "Iniciar"
         }
-      ]
+      ],
+      "condition": "#Iniciar.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -316,7 +322,8 @@
           "activityProcessed": true,
           "dialog": "ViewVideo"
         }
-      ]
+      ],
+      "condition": "#ViewVideo.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -333,7 +340,8 @@
           "activityProcessed": true,
           "dialog": "viewSurveyResult"
         }
-      ]
+      ],
+      "condition": "#viewSurveyResult.Score >= 0.6"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -471,10 +479,12 @@
             }
           ]
         }
-      ]
+      ],
+      "condition": "#addComents.Score >= 0.6"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
   "generator": "chatbotsharedskills.lg",
-  "recognizer": "chatbotsharedskills.lu"
+  "recognizer": "chatbotsharedskills.lu.qna",
+  "id": "chatbotsharedskills"
 }
