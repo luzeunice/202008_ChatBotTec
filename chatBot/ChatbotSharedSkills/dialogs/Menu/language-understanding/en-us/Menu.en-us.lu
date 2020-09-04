@@ -1,5 +1,5 @@
 
-> !# @app.culture = es-mx
+> !# @app.culture = en-us
 # Otro
 > add some example phrases to trigger this intent:
 > - please tell me the weather

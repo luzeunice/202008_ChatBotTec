@@ -1,0 +1,28 @@
+[import](common.lg)
+
+
+# SendActivity_Q0Ml6D()
+- No existe una sesión en la fecha proporcionada.
+# SendActivity_ay5Jr4()
+- Usuario no esta dado de alta en base de datos
+# SendActivity_utKgDs()
+- Sin registro de asistencia
+# SendActivity_2f60Fl()
+- Se ha realizado la cancelación
+# SendActivity_tOmtrK()
+- Error en el proceso de cancelación.
+
+
+# DateTimeInput_Prompt_FUgz5X()
+- Claro, ¿en qué fecha es la sesión en la que quieres cancelar tu asistencia? (Para evitar ambigüedad en la fecha te recomendamos escribirla en formato MES/DIA/AÑO)
+
+
+
+
+
+# DateTimeInput_InvalidPrompt_FUgz5X()
+- Disculpa, no te entendí, prueba ingresando la fecha con el formato MES/DIA/AÑO
+
+
+# SendActivity_JvWidX()
+- Parece que hubo un error en la solicitud, intenta de nuevo más tarde.

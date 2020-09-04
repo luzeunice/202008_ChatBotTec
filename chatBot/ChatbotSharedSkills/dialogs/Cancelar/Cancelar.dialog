@@ -24,21 +24,14 @@
         {
           "$kind": "Microsoft.CancelAllDialogs",
           "$designer": {
-            "id": "8COjB6"
+            "id": "vGKqQa"
           },
           "activityProcessed": true
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "D5eHCG"
-          },
-          "activityProcessed": true,
-          "dialog": "Menu"
         }
       ]
     }
   ],
   "generator": "Cancelar.lg",
-  "id": "Cancelar"
+  "id": "Cancelar",
+  "recognizer": "Cancelar.lu.qna"
 }

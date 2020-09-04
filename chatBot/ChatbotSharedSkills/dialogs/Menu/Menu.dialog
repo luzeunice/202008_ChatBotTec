@@ -64,5 +64,6 @@
     }
   ],
   "generator": "Menu.lg",
-  "recognizer": "Menu.lu"
+  "recognizer": "Menu.lu.qna",
+  "id": "Menu"
 }

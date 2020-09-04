@@ -61,7 +61,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "value": "dialog.foreach.value"
         }
       ]
     },
@@ -231,18 +232,12 @@
       "intent": "Cancelar",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "JntGES"
+            "id": "u2ODrq"
           },
-          "activity": "${SendActivity_JntGES()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "EsX8XS"
-          },
-          "activityProcessed": true
+          "activityProcessed": true,
+          "dialog": "Cancelar"
         }
       ],
       "condition": "#Cancelar.Score >= 0.6"

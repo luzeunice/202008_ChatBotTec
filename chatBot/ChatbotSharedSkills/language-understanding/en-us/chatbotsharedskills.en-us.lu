@@ -1,6 +1,5 @@
-﻿
-> !# @app.culture = es-mx
 
+> !# @app.culture = en-us
 # AddSession
 - 4
 - Impartir una Sesión
@@ -33,7 +32,6 @@
 - Quiero dar una sesión de SS
 - Quiero impartir una sesión con el titulo {@sessionTitle = Nuevas Formas de trabajo}
 - Añadir Sesión
-
 > entity definitions
 @ ml sessionTitle
 > phrase list definitions
@@ -46,9 +44,8 @@
 	- agrega
 	- agenda
 	- agendar
-
+> $ userNomina: /(L(\d{8}))|l(\d{8})/ 
 @ ml userNomina 
-
 # ViewSessions
 - 1
 - Sabes cuáles son las siguientes sesiones?
@@ -66,7 +63,6 @@
 - Ver próximos share skills
 - Fechas de próximos Share Skills
 - Fechas y títulos de próximos Share Skills
-
 # Registration
 - 5
 - Asistir a una sesion
@@ -105,50 +101,50 @@
 - me puedes registrar a un share skills?
 - me puedes registrar a una plática?
 
+> entity definitions:
+> $ userNomina: /(L(\d{8}))|l(\d{8})/ 
+> $ fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 
 @ ml userNomina 
 @ ml fechaDeEvento
-
 # Cancelar
 > add some example phrases to trigger this intent:
 > - please tell me the weather
 > - what is the weather like in {city=Seattle}
 - Salir
-
-
-
+> entity definitions:
+> @ ml city
 # Menu
 > add some example phrases to trigger this intent:
 > - please tell me the weather
 > - what is the weather like in {city=Seattle}
 -Menu
+> entity definitions:
+> @ ml city
 
 
 # Iniciar
 - 1
-- Iniciar
 - Iniciar
 - Registrarme
 - LogIn
 
 
 - Mi nomina es {@userNomina = L01096586}
-- Mi nomina es {@userNomina = L01732945}
+- Mi nomina {@userNomina = L01732945}
 - La nomina es {@userNomina = L01732945}
 - Para que me guardes la nomina es {@userNomina = L01732945}
 - Mi nómina es {@userNomina = L01732945}
 - {@userNomina = L01096586}
 
-- Mi email es {@userCorreo = luzeunice@tec.mx}
-- Mi emial es el {@userCorreo = luzeunice@tec.mx}
-- El emial es {@userCorreo =luzeunice@tec.mx}
-- {@userCorreo=luzeunice@tec.mx}
+- Mi email es {@user_correo}
+- Mi emial es el {@user_correo}
+- El emial es {@user_correo}
+- {@user_correo}
 
 > entity definitions:
 @ ml userNomina 
-@ ml userCorreo 
-@ prebuilt  email correo
-
+@ prebuilt email user_correo
 # ViewVideo
 > add some example phrases to trigger this intent:
 > - please tell me the weather
@@ -196,6 +192,8 @@
 
 @ ml userNomina 
 @ ml fechaDeEvento 
+> $userNomina: /(L(\d{8}))|l(\d{8})/ 
+> $fechaDeEvento:/[0-3]{0,1}[0-9]{1}(\/|\-)[0-3]{0,1}[0-9]{1}(\/|\-)20[0-9]{2}/ 
 
 # addComments
 - 7

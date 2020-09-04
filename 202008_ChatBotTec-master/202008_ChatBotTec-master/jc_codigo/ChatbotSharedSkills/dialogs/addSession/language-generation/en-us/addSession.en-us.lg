@@ -1,0 +1,17 @@
+[import](common.lg)
+
+# TextInput_Prompt_hLKCGI()
+- ¿Qué título te gustaría ponerle a la reunión?
+- ¿Cómo se llamaría la plática?
+
+
+# TextInput_Prompt_x4dip6()
+- Por favor escribe una breve descripción de lo que se tratará en la sesión.
+# TextInput_Prompt_sIs1pu()
+- ¿Qué día te gustaría impartir la sesión? Recuerda escribir la fecha en formato DIA/MES/AÑO (Ej. 30/10/2022)
+# SendActivity_EJkTO0()
+- Parece que hubo un error en la solicitud, intenta de nuevo más tarde.
+# SendActivity_Wd1o7H()
+- Ok. Añadí **${dialog.sessionTitle}** para el día **${dialog.fecha}**. Pronto recibirás noticias del estatus de tu solicitud.
+# SendActivity_CNF8Ip()
+- Parece que hubo un error en la solicitud, intenta de nuevo más tarde. ${dialog.api_response.content.Resultado}

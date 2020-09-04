@@ -1,0 +1,8 @@
+{
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "LUIS_pedirNomina",
+    "recognizers": {
+        "en-us": "pedirNomina.en-us.lu",
+        "": "pedirNomina.en-us.lu"
+    }
+}

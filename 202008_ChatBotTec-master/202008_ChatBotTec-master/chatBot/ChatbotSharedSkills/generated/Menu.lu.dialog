@@ -1,0 +1,8 @@
+{
+    "$kind": "Microsoft.MultiLanguageRecognizer",
+    "id": "LUIS_Menu",
+    "recognizers": {
+        "es-mx": "Menu.en-us.lu",
+        "": "Menu.en-us.lu"
+    }
+}

@@ -1,0 +1,16 @@
+
+# TextInput_Response_4lIja5
+> add some expected user responses:
+- Mi nomina es {@nomina = L01234560}
+- La nomina es {@nomina = L04567894}
+- {@nomina = L04566674}
+
+- Mi correo es {@correo}
+- Mi correo es el {@correo}
+- El correo es {@correo}
+- {@correo}
+
+> entity definitions:
+@ ml nomina
+@ prebuilt email correo
+

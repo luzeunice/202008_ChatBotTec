@@ -1,5 +1,5 @@
 
-> !# @app.culture = es-mx
+> !# @app.culture = en-us
 # TextInput_Response_UjxE9b
 - Mi nomina es {@userNomina = L01096586}
 - Mi nomina es {@userNomina = L01732945}
@@ -8,15 +8,15 @@
 - Mi nómina es {@userNomina = L01732945}
 - {@userNomina = L01096586}
 
-- Mi email es {@userCorreo = luzeunice@tec.mx}
-- Mi emial es el {@userCorreo = luzeunice@tec.mx}
-- El emial es {@userCorreo =luzeunice@tec.mx}
-- {@userCorreo=luzeunice@tec.mx}
+- Mi email es {@user_correo}
+- Mi emial es el {@user_correo}
+- El emial es {@user_correo}
+- {@user_correo}
 
 > entity definitions:
 @ ml userNomina 
-@ ml userCorreo 
-@ prebuilt  email correo
+@ prebuilt email user_correo
+
 
 
 
@@ -29,11 +29,9 @@
 - Mi nómina es {@userNomina = L01732945}
 - {@userNomina = L01096586}
 
-- Mi email es {@userCorreo = luzeunice@tec.mx}
-- Mi emial es el {@userCorreo = luzeunice@tec.mx}
-- El emial es {@userCorreo =luzeunice@tec.mx}
-- {@userCorreo=luzeunice@tec.mx}
+- Mi email es {@user_correo}
+- Mi emial es el {@user_correo}
+- El emial es {@user_correo}
+- {@user_correo}
 
-> entity definitions:
-@ ml userNomina 
-@ ml userCorreo 
+

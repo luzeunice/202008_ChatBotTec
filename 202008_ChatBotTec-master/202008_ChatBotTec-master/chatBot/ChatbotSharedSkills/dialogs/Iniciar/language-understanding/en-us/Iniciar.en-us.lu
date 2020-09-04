@@ -1,0 +1,37 @@
+
+> !# @app.culture = es-mx
+# TextInput_Response_UjxE9b
+- Mi nomina es {@userNomina = L01096586}
+- Mi nomina es {@userNomina = L01732945}
+- La nomina es {@userNomina = L01732945}
+- Para que me guardes la nomina es {@userNomina = L01732945}
+- Mi nómina es {@userNomina = L01732945}
+- {@userNomina = L01096586}
+
+- Mi email es {@user_correo}
+- Mi emial es el {@user_correo}
+- El emial es {@user_correo}
+- {@user_correo}
+
+> entity definitions:
+@ ml userNomina 
+@ prebuilt email user_correo
+
+
+
+
+
+# TextInput_Response_RFU2WN
+- Mi nomina es {@userNomina = L01096586}
+- Mi nomina es {@userNomina = L01732945}
+- La nomina es {@userNomina = L01732945}
+- Para que me guardes la nomina es {@userNomina = L01732945}
+- Mi nómina es {@userNomina = L01732945}
+- {@userNomina = L01096586}
+
+- Mi email es {@user_correo}
+- Mi emial es el {@user_correo}
+- El emial es {@user_correo}
+- {@user_correo}
+
+

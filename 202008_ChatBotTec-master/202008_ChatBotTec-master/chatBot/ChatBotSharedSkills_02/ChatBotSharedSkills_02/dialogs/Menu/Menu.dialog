@@ -1,0 +1,28 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Y3Cc9Z",
+    "name": "Menu"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "fKSL0T"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "fyq20d"
+          },
+          "activity": "${SendActivity_fyq20d()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Menu.lg"
+}

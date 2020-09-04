@@ -1,0 +1,116 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "4B7XST",
+    "name": "pedirNomina",
+    "description": "Dialogo para la validación de la nómina"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "id": "lXmNM9"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "i8fCgW"
+          },
+          "properties": [
+            "user.name",
+            "dialog.api_response"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "QhgORP"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_QhgORP()}",
+          "property": "user.name",
+          "value": "=coalesce(@correo,@nomina)"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "pUD1VZ"
+          },
+          "method": "POST",
+          "body": {
+            "identificador": "${user.name}"
+          },
+          "resultProperty": "dialog.api_response",
+          "responseType": "json",
+          "url": "https://la-fn-app.azurewebsites.net/api/lausuarios?code=fkQj88KkK9FhpkBhxffmuUVMt9VT34huxPktVd8IGwb37BoIEhi9zw=="
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "l98d3R"
+          },
+          "condition": "dialog.api_response.statusCode==200",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "AV79Xm"
+              },
+              "condition": "dialog.api_response.content.resultado.nombre==\"Sin Datos\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "uOI8Mn"
+                  },
+                  "activity": "${SendActivity_uOI8Mn()}"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "61ETmK"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "Qr7ZOy"
+                  },
+                  "activityProcessed": true,
+                  "allowLoop": true
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "q30x6w"
+                  },
+                  "activity": "${SendActivity_q30x6w()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "QLhaZm"
+              },
+              "activity": "${SendActivity_QLhaZm()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "pedirNomina.lg",
+  "recognizer": "pedirNomina.lu"
+}
