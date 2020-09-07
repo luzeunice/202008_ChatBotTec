@@ -1,8 +1,9 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "YGtrjl",
-    "name": "viewSurveyResult"
+    "id": "YMPmcG",
+    "name": "Welcome",
+    "description": ""
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
@@ -11,19 +12,22 @@
       "$kind": "Microsoft.OnBeginDialog",
       "$designer": {
         "name": "BeginDialog",
-        "id": "lGw7Rq"
+        "description": "",
+        "id": "RZhDx6"
       },
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "cLIhqI"
+            "id": "yQlUVn",
+            "name": "Send a response"
           },
-          "activity": "${SendActivity_cLIhqI()}"
+          "activity": "${SendActivity_yQlUVn()}"
         }
       ]
     }
   ],
-  "generator": "viewSurveyResult.lg",
-  "id": "viewSurveyResult"
+  "generator": "Welcome.lg",
+  "recognizer": "Welcome.lu.qna",
+  "id": "Welcome"
 }

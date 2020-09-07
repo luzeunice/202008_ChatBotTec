@@ -1,4 +1,4 @@
-[import](common.lg)
+﻿[import](common.lg)
 
 
 # SendActivity_Q0Ml6D()
@@ -14,7 +14,36 @@
 
 
 # DateTimeInput_Prompt_FUgz5X()
-- Claro, ¿en qué fecha es la sesión en la que quieres cancelar tu asistencia? (Para evitar ambigüedad en la fecha te recomendamos escribirla en formato MES/DIA/AÑO)
+- ``` Claro!, Iniciemos con el proceso de cancelación de asistencia
+¿en qué fecha es la sesión en la que quieres cancelar tu asistencia? 
+(Para evitar ambigüedad en la fecha te recomendamos escribirla en formato AÑO-MES-DIA Ej. 2020-09-20 para el 20 de septiembre)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

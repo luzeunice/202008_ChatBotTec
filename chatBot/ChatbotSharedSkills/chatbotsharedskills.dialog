@@ -477,6 +477,24 @@
           "isTest": false
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7X1oVl",
+        "name": "Welcome"
+      },
+      "intent": "Welcome",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "oq4j0y"
+          },
+          "activityProcessed": true,
+          "dialog": "Welcome"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",

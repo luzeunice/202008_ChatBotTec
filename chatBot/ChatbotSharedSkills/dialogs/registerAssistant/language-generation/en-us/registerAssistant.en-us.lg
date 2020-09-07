@@ -1,4 +1,4 @@
-[import](common.lg)
+﻿[import](common.lg)
 
 
 
@@ -23,11 +23,22 @@
 # SendActivity_wT2uJN()
 - Lo siento, no pude hacer el registro, prueba volviendo a hacer la solicitud con los formatos correctos
 # DateTimeInput_Prompt_IdhZZs()
-- Claro, ¿en qué fecha es la sesión en la que quieres participar? (Para evitar ambigüedad en la fecha te recomendamos escribirla en formato MES/DIA/AÑO)
-
-
+- ``` Claro!, Iniciemos con el proceso de registros de asistencia a una plática
+¿en qué fecha es la sesión en la que quieres participar? 
+(Para evitar ambigüedad en la fecha te recomendamos escribirla en formato AÑO-MES-DIA Ej. 2020-09-20 para el 20 de septiembre)
+```
 
 
 
 # DateTimeInput_InvalidPrompt_IdhZZs()
-- Disculpa, no te entendí, prueba ingresando la fecha con el formato MES/DIA/AÑO
+- Disculpa, no te entendí, prueba ingresando la fecha con el formato MES/DIA/AÑO. Ejemplo : 09/20/2020 Para el 20 de septiembre
+
+
+
+
+
+
+
+
+
+

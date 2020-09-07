@@ -211,12 +211,10 @@
             }
           ]
         }
-      ],
-      "condition": "user.nombre=='Sin Datos'",
-      "runOnce": false
+      ]
     }
   ],
   "generator": "Iniciar.lg",
-  "recognizer": "Iniciar.lu",
+  "recognizer": "Iniciar.lu.qna",
   "id": "Iniciar"
 }

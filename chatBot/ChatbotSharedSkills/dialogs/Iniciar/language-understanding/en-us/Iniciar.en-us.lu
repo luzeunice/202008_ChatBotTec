@@ -13,6 +13,20 @@
 - El emial es {@user_correo}
 - {@user_correo}
 
+- Mi correo es {@user_correo = luzeunice@tec.mx}
+- Mi correo es el {@user_correo}
+- El correo es {@user_correo}
+
+- Mi correo electrónico es {@user_correo}
+- Mi correo electrónico es el {@user_correo}
+- El correo electrónico  es {@user_correo}
+
+
+- Mi correo electronico es {@user_correo}
+- Mi correo electronico es el {@user_correo}
+- El correo electronico  es {@user_correo}
+
+
 > entity definitions:
 @ ml userNomina 
 @ prebuilt email user_correo
@@ -33,5 +47,17 @@
 - Mi emial es el {@user_correo}
 - El emial es {@user_correo}
 - {@user_correo}
+
+- Mi correo es {@user_correo}
+- Mi correo es el {@user_correo}
+- El correo es {@user_correo}
+
+- Mi correo electrónico es {@user_correo = luzeunice@tec.mx}
+- Mi correo electrónico es el {@user_correo}
+- El correo electrónico  es {@user_correo}
+
+- Mi correo electronico es {@user_correo}
+- Mi correo electronico es el {@user_correo}
+- El correo electronico  es {@user_correo}
 
 

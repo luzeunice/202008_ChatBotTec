@@ -26,5 +26,6 @@
       ]
     }
   ],
-  "generator": "ViewVideo.lg"
+  "generator": "ViewVideo.lg",
+  "id": "ViewVideo"
 }

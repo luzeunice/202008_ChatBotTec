@@ -6,7 +6,37 @@
 # SendActivity_BI4DlY()
 - Nómina/correo electrónico no registrado Intentalo Nuevamente
 # SendActivity_XZ5yJv()
-- Bienvenid@ ${dialog.api_response.content.resultado.nombre}
+- Bienvenid@ **${dialog.api_response.content.resultado.nombre}**  para mostrarte algunos de los temas con los que puedo ayudarte escribe la palabra: **Menu**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # SendActivity_apuFcU()
 - Contactar al administrador : *anantonieta@tec.mx*

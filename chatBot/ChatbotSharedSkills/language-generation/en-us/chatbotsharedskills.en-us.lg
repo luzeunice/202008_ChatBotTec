@@ -4,7 +4,7 @@
 - ${HeroCard()}
 
 
-# HeroCard
+# HeroCard()
 [HeroCard
     title = ShaSBot
     subtitle = Share Skill Bot

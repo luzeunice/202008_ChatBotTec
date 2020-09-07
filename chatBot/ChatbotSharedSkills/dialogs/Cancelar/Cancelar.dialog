@@ -15,6 +15,35 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "fFNufP"
+          },
+          "properties": [
+            "user.identificador"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "AqP0FA"
+          },
+          "assignments": [
+            {
+              "property": "user.nomina",
+              "value": "Sin Datos"
+            },
+            {
+              "property": "user.nombre",
+              "value": "Sin Datos"
+            },
+            {
+              "property": "user.correo",
+              "value": "Sin Datos"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "7RRNHU"

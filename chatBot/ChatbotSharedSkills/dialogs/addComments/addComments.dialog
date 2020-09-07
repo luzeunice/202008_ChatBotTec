@@ -97,5 +97,6 @@
       ]
     }
   ],
-  "generator": "addComments.lg"
+  "generator": "addComments.lg",
+  "id": "addComments"
 }
