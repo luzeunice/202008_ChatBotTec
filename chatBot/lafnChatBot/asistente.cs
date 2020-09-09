@@ -88,26 +88,43 @@ namespace Company.Function
                 if (usuario.Count==1 && sesion.Count==1){
                     List<Asistente>asistente=tableAsistente.CreateQuery<Asistente>().AsQueryable<Asistente>().Where(e=>e.PartitionKey==sesion[0].idSesion && e.RowKey == nomina).ToList();
                     if (asistente.Count>0){
-                        return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="YaRegistrado"}));
+                        List<Asistente>asistenteRegistrado=tableAsistente.CreateQuery<Asistente>().AsQueryable<Asistente>().Where(e=>e.PartitionKey==sesion[0].idSesion && e.RowKey == nomina && e.asistencia=="S").ToList();
+                        if (asistenteRegistrado.Count>0){
+                            return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="YaRegistrado"}));
+                        }
+                        else{
+                            try{
+                                asistenteRegistrado[0].asistencia="S";
+                                asistente[0].fechaRegistro=DateTime.Now.ToString("dd/MM/yyyy");
+                                TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(asistenteRegistrado[0]);
+                                TableResult result = await tableAsistente.ExecuteAsync(insertOrMergeOperation);
+                            }
+                            catch(Exception e){
+                                log.LogInformation(e.Message);
+                                return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="ErrorInsert"}));
+                            } 
+                        }
                     }
-                    try{
-                        Asistente entity=new Asistente();
-                        entity.idSesion=sesion[0].idSesion;
-                        entity.nomina_asistente=nomina;
-                        entity.fechaRegistro=DateTime.Now.ToString("dd/MM/yyyy");
-                        entity.asistencia="S";
-                        entity.PartitionKey=entity.idSesion;
-                        entity.RowKey=nomina;
-                        // Create the InsertOrReplace table operation
-                        TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(entity);
+                    else{
+                        try{
+                            Asistente entity=new Asistente();
+                            entity.idSesion=sesion[0].idSesion;
+                            entity.nomina_asistente=nomina;
+                            entity.fechaRegistro=DateTime.Now.ToString("dd/MM/yyyy");
+                            entity.asistencia="S";
+                            entity.PartitionKey=entity.idSesion;
+                            entity.RowKey=nomina;
+                            // Create the InsertOrReplace table operation
+                            TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(entity);
 
-                        // Execute the operation.
-                        TableResult result = await tableAsistente.ExecuteAsync(insertOrMergeOperation);
-                        
-                    }
-                    catch (Exception e){
-                        log.LogInformation(e.Message);
-                        return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="ErrorInsert"}));
+                            // Execute the operation.
+                            TableResult result = await tableAsistente.ExecuteAsync(insertOrMergeOperation);
+                            
+                        }
+                        catch (Exception e){
+                            log.LogInformation(e.Message);
+                            return new OkObjectResult(JsonConvert.SerializeObject( new {Resultado="ErrorInsert"}));
+                        }
                     }
                 }
                 else{
