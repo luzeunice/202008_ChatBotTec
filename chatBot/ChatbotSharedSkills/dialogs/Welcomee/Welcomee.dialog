@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "YMPmcG",
-    "name": "Welcome",
+    "id": "FaPQDk",
+    "name": "Welcomee",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,21 +13,20 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "RZhDx6"
+        "id": "T5m6rU"
       },
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "yQlUVn",
-            "name": "Send a response"
+            "id": "5vfUzT"
           },
-          "activity": "${SendActivity_yQlUVn()}"
+          "activity": "${SendActivity_5vfUzT()}"
         }
       ]
     }
   ],
-  "generator": "Welcome.lg",
-  "recognizer": "Welcome.lu.qna",
-  "id": "Welcome"
+  "generator": "Welcomee.lg",
+  "recognizer": "Welcomee.lu.qna",
+  "id": "Welcomee"
 }
