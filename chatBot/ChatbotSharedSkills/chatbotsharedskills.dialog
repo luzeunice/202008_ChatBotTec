@@ -481,18 +481,18 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "7X1oVl",
-        "name": "Welcome"
+        "id": "sNmpKd",
+        "name": "Welcomee"
       },
-      "intent": "Welcome",
+      "intent": "Welcomee",
       "actions": [
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "oq4j0y"
+            "id": "ssnY1T"
           },
           "activityProcessed": true,
-          "dialog": "Welcome"
+          "dialog": "Welcomee"
         }
       ]
     }

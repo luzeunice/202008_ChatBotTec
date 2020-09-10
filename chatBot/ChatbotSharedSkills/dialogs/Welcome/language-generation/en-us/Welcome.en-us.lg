@@ -1,12 +1,1 @@
 [import](common.lg)
-
-# SendActivity_yQlUVn()
-- ${HeroCard()}
-# HeroCard()
-[HeroCard
-    title = ShaSbot
-    subtitle = Share Skill Bot
-    text = ¡Hola!, Soy ShaSbot tu asistente virtual para el programa Share Skill.
-    image = https://la0chatbot0public.blob.core.windows.net/imagenes/shareSkill_00.png
-    buttons = Iniciar
-]
