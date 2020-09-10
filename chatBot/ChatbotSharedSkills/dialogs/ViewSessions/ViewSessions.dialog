@@ -66,14 +66,6 @@
               "activity": "${SendActivity_OMSVM3()}"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "6kjgXQ"
-          },
-          "activityProcessed": true,
-          "dialog": "Menu"
         }
       ]
     }

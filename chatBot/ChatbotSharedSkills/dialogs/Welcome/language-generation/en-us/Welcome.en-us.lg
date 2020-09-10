@@ -2,12 +2,11 @@
 
 # SendActivity_yQlUVn()
 - ${HeroCard()}
-
 # HeroCard()
 [HeroCard
-    title = ShaSBot
+    title = ShaSbot
     subtitle = Share Skill Bot
-    text = Share Skills nace como una iniciativa de convivencia, colaboración, creatividad, proyección y aprendizaje continuo a través de platicas quincenales, en el que platicaremos sobre alguna habilidad con el fin de poder conoceros mejor a través de nuestras historias y al mismo tiempo aprender de nosotros mismos como un grupo de impacto. Esta iniciativa cuenta con calendario, convocatoria, site , metodología, encuesta de salidas y acompañamiento durante todo el proceso
+    text = ¡Hola!, Soy ShaSbot tu asistente virtual para el programa Share Skill.
     image = https://la0chatbot0public.blob.core.windows.net/imagenes/shareSkill_00.png
     buttons = Iniciar
 ]
