@@ -10,8 +10,8 @@
 * Resultado2 : Detalle del evento2
 * Resultado3 : Detalle del evento3
 * 
-* VALIDACIÓN: 
-* Si no hay información en la sesión: Colocar nulls
+* VALIDACIï¿½N: 
+* Si no hay informaciï¿½n en la sesiï¿½n: Colocar nulls
 * 
 * Creado por: Luz Eunice Angeles Ochoa 
 * Fecha: 26 de agosto de 2020
@@ -68,7 +68,7 @@ namespace lafnChatBot
                 log.LogInformation("C# HTTP trigger function processed a request POST.");
 
                 /* **************************
-                 * Información no necesaria
+                 * Informaciï¿½n no necesaria
                  
                 identificador = req.Query["identificador"];
 
@@ -104,18 +104,18 @@ namespace lafnChatBot
 
 
                 /****************************
-                * OBTENER LA INFORMACIÓN 
+                * OBTENER LA INFORMACIï¿½N 
                 ****************************/
 
                 
-                List<Sesion> sesion = tableSesion.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" && e.fecha_evento >= DateTime.UtcNow).ToList();
+                List<Sesion> sesion = tableSesion.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" && e.estatus == "Reservada" && e.fecha_evento >= DateTime.UtcNow).ToList();
                 
                 /*
                 List<Sesion> sesion = tableSesion.CreateQuery<Sesion>().AsQueryable<Sesion>().Where(e => e.PartitionKey == "Sesiones" ).ToList();
                 */
                 List<Sesion> sesion_orden = sesion.OrderBy(c => c.fecha_evento).ToList();
 
-                var sesionVacia = new List<Sesion>() { new Sesion() { titulo = "Sin Próximas Sesiones Planeadas" } };
+                var sesionVacia = new List<Sesion>() { new Sesion() { titulo = "Sin PrÃ³ximas Sesiones Planeadas" } };
 
                 if (sesion.Count >= 3 )
                 {
