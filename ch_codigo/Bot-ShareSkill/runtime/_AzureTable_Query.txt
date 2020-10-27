@@ -1,8 +1,0 @@
-
-    Insertar en el proyecto:
-    <ProjectReference Include="..\Custom_AzureTable_Query\Microsoft.BotFramework.Composer.CustomAction_AzureTable_Query.csproj" />
-
-    Insertar en startup
-    using Microsoft.BotFramework.Composer.CustomAction_AzureTable_Query;
-    ComponentRegistration.Add(new CustomComponentRegistration_AzureTable_Query());
-    

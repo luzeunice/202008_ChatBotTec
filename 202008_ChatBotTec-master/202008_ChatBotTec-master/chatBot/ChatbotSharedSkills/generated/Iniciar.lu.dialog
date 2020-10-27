@@ -1,8 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "id": "LUIS_Iniciar",
-    "recognizers": {
-        "es-mx": "Iniciar.en-us.lu",
-        "": "Iniciar.en-us.lu"
-    }
-}

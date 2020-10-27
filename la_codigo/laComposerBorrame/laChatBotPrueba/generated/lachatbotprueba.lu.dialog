@@ -1,8 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "id": "LUIS_lachatbotprueba",
-    "recognizers": {
-        "en-us": "lachatbotprueba.en-us.lu",
-        "": "lachatbotprueba.en-us.lu"
-    }
-}

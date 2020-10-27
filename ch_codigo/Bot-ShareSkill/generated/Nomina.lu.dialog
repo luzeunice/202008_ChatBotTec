@@ -1,8 +1,0 @@
-{
-    "$kind": "Microsoft.MultiLanguageRecognizer",
-    "id": "LUIS_Nomina",
-    "recognizers": {
-        "en-us": "Nomina.en-us.lu",
-        "": "Nomina.en-us.lu"
-    }
-}
