@@ -1,0 +1,82 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {   
+        "nombre_bot" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Nombre del bot al que se le agregara el conector"
+            }
+        },    
+        "ClientId" : {
+            "type" : "string",
+            "metadata": {
+              "description": "ClientID de la aplicacion registrada para AD"
+            }
+        },
+        "ClientSecret" : {
+            "type" : "securestring",
+            "metadata": {
+              "description": "ClientSecret de la aplicacion registrada para AD"
+            }
+        },
+        "TenantId" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Tenant de la suscripcion"
+            }
+        },
+        "scopes" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Permisos que se le pediran al usuario"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "[concat(parameters('nombre_bot'), '/Connector')]",
+            "type": "Microsoft.BotService/botServices/Connections",
+            "apiVersion": "2018-07-12",
+            "location": "global",
+            "properties": {
+                "clientId": "[parameters('ClientId')]",
+                "clientSecret": "[parameters('ClientSecret')]",
+                "scopes": "",
+                "serviceProviderId": "5232e24f-b6c6-4920-b09d-d93a520c92e9",
+                "serviceProviderDisplayName": "Azure Active Directory",
+                "parameters": [
+                    {
+                        "key": "ClientId",
+                        "value": "[parameters('ClientId')]"
+                    },
+                    {
+                        "key": "ClientSecret",
+                        "value": "[parameters('ClientSecret')]"
+                    },
+                    {
+                        "key": "TenantId",
+                        "value": "[parameters('TenantId')]"
+                    },
+                    {
+                        "key": "GrantType",
+                        "value": "authorization_code"
+                    },
+                    {
+                        "key": "LoginUri",
+                        "value": "https://login.microsoftonline.com"
+                    },
+                    {
+                        "key": "ResourceUri",
+                        "value": "https://graph.microsoft.com/"
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+

@@ -1,0 +1,65 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {   
+        "nombre_bot" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Nombre del bot al que se le agregara el conector"
+            }
+        },    
+        "ClientId" : {
+            "type" : "string",
+            "metadata": {
+              "description": "ClientID de la aplicacion registrada para AD"
+            }
+        },
+        "ClientSecret" : {
+            "type" : "securestring",
+            "metadata": {
+              "description": "ClientSecret de la aplicacion registrada para AD"
+            }
+        },
+        "TenantId" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Tenant de la suscripcion"
+            }
+        },
+        "scopes" : {
+            "type" : "string",
+            "metadata": {
+              "description": "Permisos que se le pediran al usuario"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "[concat(parameters('nombre_bot'), '/Connector')]",
+            "type": "Microsoft.BotService/botServices/Connections",
+            "apiVersion": "2018-07-12",
+            "location": "global",
+            "properties": {
+                "clientId": "[parameters('ClientId')]",
+                "clientSecret": "[parameters('ClientSecret')]",
+                "scopes": "[parameters('scopes')]",
+                "serviceProviderId": "30dd229c-58e3-4a48-bdfd-91ec48eb906c",
+                "serviceProviderDisplayName": "Azure Active Directory v2",
+                "parameters": [{
+                        "key": "ClientId",
+                        "value": "[parameters('ClientId')]"
+                    },
+                    {
+                        "key": "ClientSecret",
+                        "value": "[parameters('ClientSecret')]"
+                    },
+                    {
+                        "key": "TenantId",
+                        "value": "[parameters('TenantId')]"
+                    }
+                ]
+            }
+        }
+    ]
+}

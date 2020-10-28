@@ -1,9 +1,9 @@
 {
     "luis": {
-        "Menu_en_us_lu": "019b57ab-4b74-4527-b6eb-3cb9952a99b7",
-        "registerAssistant_en_us_lu": "eb04a5fe-9762-4142-b241-98cae285a9cd",
-        "Iniciar_en_us_lu": "55e4af2e-804c-45f7-94d9-0ca30321d3c7",
-        "Cancelar_en_us_lu": "3b26041c-9745-4174-aa49-29278affff21",
-        "chatbotsharedskills_en_us_lu": "e9395637-5ba0-4ad8-9ca8-696a5ee45212"
+        "registerAssistant_en_us_lu": "3086c2c1-2701-4d9b-97ba-ac2f18e6e94f",
+        "Cancelar_en_us_lu": "91c01d68-3489-45f8-8e85-2661faf11508",
+        "Menu_en_us_lu": "5da26a56-4d80-458a-9bc8-aa989b40615d",
+        "chatbotsharedskills_en_us_lu": "db66f4dd-52c0-4ba2-9ac4-4b53e42dc861",
+        "Iniciar_en_us_lu": "82d7388b-0868-4eaf-bf82-f4f42622f10a"
     }
 }
