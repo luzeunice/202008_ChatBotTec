@@ -4,14 +4,14 @@
 
 # Datos para el BOT
 # $nombre_bot = "CH-19OCT-Bot" 
-$nombre_bot = "LAShareSkills01"                                 ## !!! Obligatorio !!!###
+$nombre_bot = "latecbot02"                                 ## !!! Obligatorio !!!###
 
 # En qué service plan se va a publicar el app del bot
-$app_service_plan = "LAShareSkills01"                                                ## !!! Obligatorio !!!###
+$app_service_plan = "CH-ServicePlan"                                                ## !!! Obligatorio !!!###
 $appServicePlanLocation = "South Central US" #"West US" # "South Central US"    ## !!! Obligatorio !!!###
 
 # Grupo de recursos general
-$resource_group = "rg_ChatBot"
+$resource_group = "rg_chbot_insc"
 #$resource_group = "rg_chbot_insc"                                                  ## !!! Obligatorio !!!###
 
 # En caso de necesitar añadir Active Directory
@@ -19,7 +19,7 @@ $generar_AD = $false
 $vector_scopes = @('openid', 'profile','User.ReadBasic.All','User.Read')
 
 # En caso de contener LUIS (Dejar en blanco "" si no tiene Luis)
-$luisResource = "LAShareSkills01"                                                
+$luisResource = "laluistecbot05"                                                
 
 # Aun no terminado (para crear bots de linux)
 $app_service_pan_OS_LINUX = $false
